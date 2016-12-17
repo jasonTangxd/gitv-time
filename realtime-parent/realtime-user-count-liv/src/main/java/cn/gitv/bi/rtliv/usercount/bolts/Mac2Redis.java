@@ -4,8 +4,6 @@ import cn.gitv.bi.rtliv.usercount.constant.Constant;
 import cn.gitv.bi.rtliv.usercount.utils.RedisChoose;
 import cn.gitv.bi.rtliv.usercount.utils.StringHandle;
 import org.apache.commons.lang.StringUtils;
-import org.apache.storm.Config;
-import org.apache.storm.Constants;
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
 import org.apache.storm.topology.IRichBolt;
@@ -18,7 +16,6 @@ import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Transaction;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -26,26 +23,21 @@ public class Mac2Redis implements IRichBolt {
     private static final long serialVersionUID = 3099879620406165967L;
     public static Logger log = LoggerFactory.getLogger(Mac2Redis.class);
     private OutputCollector collector = null;
-    private RedisChoose redisChoose = null;
 
     public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
         this.collector = collector;
-        this.redisChoose = new RedisChoose();
     }
 
     @Override
     public void execute(Tuple input) {
         Jedis jedis = null;
         try {
-            if (isTickTuple(input)) {
-                redisChoose.activateTTL();
-            } else {
-            /*mac转换成标准long*/
-                String mac = input.getStringByField("mac");
+             /*mac转换成标准long*/
+            String mac = input.getStringByField("mac");
+            long macLong = Long.parseLong(mac.replaceAll(":", ""), 16);
             /*根据mac获得一个redis连接*/
-                jedis = redisChoose.macHash2Redis(mac);
-                checkMacAndHandle(jedis, input);
-            }
+            jedis = RedisChoose.macHash4Redis(macLong);
+            checkMacAndHandle(jedis, input);
             collector.ack(input);
         } catch (Exception e) {
             log.error("", e);
@@ -174,13 +166,7 @@ public class Mac2Redis implements IRichBolt {
 
     @Override
     public Map<String, Object> getComponentConfiguration() {
-        Map<String, Object> conf = new HashMap<String, Object>();
-        conf.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, 11*60);//每TTL-mget一次
-        return conf;
+        return null;
     }
 
-    public static boolean isTickTuple(Tuple tuple) {
-        return tuple.getSourceComponent().equals(Constants.SYSTEM_COMPONENT_ID) && tuple.getSourceStreamId().equals(
-                Constants.SYSTEM_TICK_STREAM_ID);
-    }
 }
