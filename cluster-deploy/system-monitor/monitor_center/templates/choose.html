@@ -1,0 +1,39 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>System-Monitor-Choose</title>
+    <link rel="stylesheet" href="/fire_text/normalize.css">
+
+    <link rel="stylesheet" href="/fire_text/style.css" media="screen" type="text/css"/>
+</head>
+<body>
+<style>
+    a{width:200px;height:100px;background: green;color:white;font-size:50px;text-align: center;line-height: 100px;text-decoration: none;
+    }
+body{
+    background: url('http://pic1.win4000.com/wallpaper/b/5187710ca367c.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
+}
+
+
+</style>
+{%if host%}
+<div style='margin:50px auto;width:700px;overflow:hidden;'>
+    <a style='float:left;'
+       href="/showHistoryPage">History </a>
+    <a style='float:right;'
+       href="/showNowPage">Now</a>
+</div>
+<div style='margin:400px auto;' class="owText text-center" >{{host}}</div>
+
+<!--<div style='margin:380px auto;width:700px;'>-->
+    <!--<h1 style="text-align:center;"></h1>-->
+<!--</div>-->
+{%endif%}
+<!--错误请求，不予受理-->
+</body>
+</html>

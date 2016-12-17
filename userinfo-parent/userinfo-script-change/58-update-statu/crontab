@@ -1,0 +1,2 @@
+00 02 * * * sh /data/soft/build_shell/uif_sqldown.sh > /data/soft/build_shell/uif.log 2>&1 &
+#00 05 * * * (echo 'show you the log of uif_sqldown and know how to work';uuencode /data/soft/build_shell/uif.log 'uif.log')|mail -s "uif_sqldown.sh how to work today" 122726894@qq.com

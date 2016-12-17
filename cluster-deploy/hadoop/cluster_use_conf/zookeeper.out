@@ -1,0 +1,23 @@
+2016-11-04 15:45:54,388 [myid:] - INFO  [main:QuorumPeerConfig@124] - Reading configuration from: /data/opt/soft/zookeeper-3.4.9/bin/../conf/zoo.cfg
+2016-11-04 15:45:54,400 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: slave2.gitv.rack1.bk to address: slave2.gitv.rack1.bk/10.10.121.149
+2016-11-04 15:45:54,400 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: slave4.gitv.rack1.bk to address: slave4.gitv.rack1.bk/10.10.121.151
+2016-11-04 15:45:54,401 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: slave1.gitv.rack1.bk to address: slave1.gitv.rack1.bk/10.10.121.148
+2016-11-04 15:45:54,401 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: slave3.gitv.rack1.bk to address: slave3.gitv.rack1.bk/10.10.121.150
+2016-11-04 15:45:54,401 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: master1.gitv.rack1.bk to address: master1.gitv.rack1.bk/10.10.121.139
+2016-11-04 15:45:54,401 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: master2.gitv.rack2.bk to address: master2.gitv.rack2.bk/10.10.121.138
+2016-11-04 15:45:54,402 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: slave11.gitv.rack2.bk to address: slave11.gitv.rack2.bk/10.10.121.123
+2016-11-04 15:45:54,402 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: slave10.gitv.rack2.bk to address: slave10.gitv.rack2.bk/10.10.121.122
+2016-11-04 15:45:54,402 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: slave9.gitv.rack2.bk to address: slave9.gitv.rack2.bk/10.10.121.121
+2016-11-04 15:45:54,402 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: slave8.gitv.rack2.bk to address: slave8.gitv.rack2.bk/10.10.121.120
+2016-11-04 15:45:54,402 [myid:] - INFO  [main:QuorumPeer$QuorumServer@149] - Resolved hostname: slave7.gitv.rack2.bk to address: slave7.gitv.rack2.bk/10.10.121.119
+2016-11-04 15:45:54,403 [myid:] - INFO  [main:QuorumPeerConfig@352] - Defaulting to majority quorums
+2016-11-04 15:45:54,403 [myid:] - ERROR [main:QuorumPeerMain@85] - Invalid config, exiting abnormally
+org.apache.zookeeper.server.quorum.QuorumPeerConfig$ConfigException: Error processing /data/opt/soft/zookeeper-3.4.9/bin/../conf/zoo.cfg
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.parse(QuorumPeerConfig.java:144)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.initializeAndRun(QuorumPeerMain.java:101)
+	at org.apache.zookeeper.server.quorum.QuorumPeerMain.main(QuorumPeerMain.java:78)
+Caused by: java.lang.IllegalArgumentException: /data1/info/bizookeeper/myid file is missing
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.parseProperties(QuorumPeerConfig.java:362)
+	at org.apache.zookeeper.server.quorum.QuorumPeerConfig.parse(QuorumPeerConfig.java:140)
+	... 2 more
+Invalid config, exiting abnormally

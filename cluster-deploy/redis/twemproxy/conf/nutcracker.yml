@@ -1,0 +1,18 @@
+alpha:
+  listen: 10.10.121.148:6379
+  hash: fnv1a_64
+  hash_tag: "{}"
+  distribution: ketama
+  auto_eject_hosts: true
+  redis: true
+  server_retry_timeout: 30000
+  server_failure_limit: 1
+  servers:
+  - 10.10.121.151:55555:1 redis1
+  - 10.10.121.152:55555:1 redis2
+  - 10.10.121.153:55555:1 redis3
+  - 10.10.121.138:55555:1 redis4
+  - 10.10.121.139:55555:1 redis5
+  - 10.10.121.148:55555:1 redis6
+  - 10.10.121.149:55555:1 redis7
+  - 10.10.121.150:55555:1 redis8

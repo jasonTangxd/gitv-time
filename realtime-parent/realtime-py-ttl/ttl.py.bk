@@ -1,0 +1,42 @@
+# -*- coding:utf-8 -*-
+import redis
+import sys
+
+if __name__ == "__main__":
+    # python xx.py vod 55555 10.10.121.148
+    type = sys.argv[1]
+    listen_port = int(sys.argv[2])
+    mac_host = sys.argv[3]
+    rc_comp = None
+    rc_mac = None
+    if type == 'vod':
+        rc_mac = redis.Redis(host=mac_host, port=listen_port)
+        rc_comp = redis.Redis(host='10.10.121.120', port=55555)
+    elif type == 'liv':
+        rc_mac = redis.Redis(host=mac_host, port=listen_port)
+        rc_comp = redis.Redis(host='10.10.121.120', port=55556)
+    else:
+        print 'args is error'
+    # 开始监听
+    ps = rc_mac.pubsub()
+    ps.psubscribe("__keyevent@0__:expired")
+    for item in ps.listen():
+        if item['type'] == 'pmessage':
+            try:
+                mac = str(item['data'])  # 获得ttl到期后删除的mac
+                build_key = mac + '|cp'
+                build_value = rc_mac.get(build_key)
+                print build_value
+                if build_value:
+                    rc_mac.delete(build_key)
+                    values = build_value.split('|')
+                    channel = values[0]
+                    partner = values[1]
+                    total_key = 'total|' + channel
+                    partner_key = 'partner|' + partner + '|' + channel
+                    if rc_comp.get(total_key) != 0:
+                        rc_comp.decr(total_key)
+                    if rc_comp.get(partner_key) != 0:
+                        rc_comp.decr(partner_key)
+            except Exception as rs:
+                continue

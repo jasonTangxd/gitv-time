@@ -1,0 +1,12 @@
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/constant/Constant.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/constant/Properties.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/bolts/AppVersionIsChanged_Bolt.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/bolts/AppVersionUpdate_Bolt.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/bolts/TopFilter_Bolt.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/start/Start_up.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/storage/AsyncBack.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/storage/CRUDExcuter.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/storage/Mapper.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/utils/SimpleDateUtils.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/utils/CassandraConnection.java
+/Users/Kang/Project/ideal/gitv-kang/userinfo-parent/userinfo-app-version/src/main/java/cn/gitv/bi/userinfo/appupdate/utils/StringHandle.java

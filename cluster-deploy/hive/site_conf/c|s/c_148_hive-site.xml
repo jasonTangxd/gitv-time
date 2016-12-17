@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+	<!-- <property>
+		<name>hive.metastore.local</name>
+		<value>false</value>
+	</property> -->
+	<property> 
+		<name>hive.metastore.uris</name> 
+		<value>thrift://10.10.121.150:9083,thrift://10.10.121.151:9083</value>
+	</property>
+	<property>
+		<name>hive.metastore.warehouse.dir</name>
+		<value>/user/hive/warehouse</value>
+		<description>location of default database for the warehouse</description>
+	</property>
+</configuration>
