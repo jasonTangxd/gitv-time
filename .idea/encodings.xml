@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dailyjob-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dailyjob-parent/example" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dailyjob-parent/hadoop-rpc-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dailyjob-parent/log-clean-tohdfs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dailyjob-parent/motan-netty-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/dailyjob-parent/netty-rpc-demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/external-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/external-parent/netty-rpc-imp" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/external-parent/storm-hdfs-plus" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/launcher-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/launcher-parent/launcher-bean-parse" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/launcher-parent/launcher-log-clean" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/launcher-parent/launcher-to-hdfs" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/realtime-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/realtime-parent/realtime-user-count" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/realtime-parent/realtime-user-count-liv" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/realtime-parent/realtime-user-count-vod" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/userinfo-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/userinfo-parent/userinfo-app-version" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/userinfo-parent/userinfo-consumer-mysql" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/userinfo-parent/userinfo-maintain" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/viscosity-parent" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/viscosity-parent/viscosity-mr-cdh" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/viscosity-parent/viscosity-play" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/viscosity-parent/viscosity-to-hdfs" charset="UTF-8" />
+  </component>
+</project>

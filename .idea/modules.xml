@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/dailyjob-parent/dailyjob-parent.iml" filepath="$PROJECT_DIR$/dailyjob-parent/dailyjob-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dailyjob-parent/example/example.iml" filepath="$PROJECT_DIR$/dailyjob-parent/example/example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external-parent/external-parent.iml" filepath="$PROJECT_DIR$/external-parent/external-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gitv-kang.iml" filepath="$PROJECT_DIR$/gitv-kang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dailyjob-parent/hadoop-rpc-demo/hadoop-rpc-demo.iml" filepath="$PROJECT_DIR$/dailyjob-parent/hadoop-rpc-demo/hadoop-rpc-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/launcher-parent/launcher-bean-parse/launcher-bean-parse.iml" filepath="$PROJECT_DIR$/launcher-parent/launcher-bean-parse/launcher-bean-parse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/launcher-parent/launcher-log-clean/launcher-log-clean.iml" filepath="$PROJECT_DIR$/launcher-parent/launcher-log-clean/launcher-log-clean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/launcher-parent/launcher-parent.iml" filepath="$PROJECT_DIR$/launcher-parent/launcher-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/launcher-parent/launcher-to-hdfs/launcher-to-hdfs.iml" filepath="$PROJECT_DIR$/launcher-parent/launcher-to-hdfs/launcher-to-hdfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dailyjob-parent/log-clean-tohdfs/log-clean-tohdfs.iml" filepath="$PROJECT_DIR$/dailyjob-parent/log-clean-tohdfs/log-clean-tohdfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dailyjob-parent/motan-netty-demo/motan-netty-demo.iml" filepath="$PROJECT_DIR$/dailyjob-parent/motan-netty-demo/motan-netty-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dailyjob-parent/netty-rpc-demo/netty-rpc-demo.iml" filepath="$PROJECT_DIR$/dailyjob-parent/netty-rpc-demo/netty-rpc-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external-parent/netty-rpc-imp/netty-rpc-imp.iml" filepath="$PROJECT_DIR$/external-parent/netty-rpc-imp/netty-rpc-imp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/realtime-parent/realtime-parent.iml" filepath="$PROJECT_DIR$/realtime-parent/realtime-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/realtime-parent/realtime-user-count-liv/realtime-user-count-liv.iml" filepath="$PROJECT_DIR$/realtime-parent/realtime-user-count-liv/realtime-user-count-liv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/realtime-user-count-vod.iml" filepath="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/realtime-user-count-vod.iml" />
+      <module fileurl="file://$PROJECT_DIR$/external-parent/storm-hdfs-plus/storm-hdfs-plus.iml" filepath="$PROJECT_DIR$/external-parent/storm-hdfs-plus/storm-hdfs-plus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cluster-deploy/system-monitor/system-monitor.iml" filepath="$PROJECT_DIR$/cluster-deploy/system-monitor/system-monitor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userinfo-parent/userinfo-app-version/userinfo-app-version.iml" filepath="$PROJECT_DIR$/userinfo-parent/userinfo-app-version/userinfo-app-version.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userinfo-parent/userinfo-consumer-mysql/userinfo-consumer-mysql.iml" filepath="$PROJECT_DIR$/userinfo-parent/userinfo-consumer-mysql/userinfo-consumer-mysql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userinfo-parent/userinfo-maintain/userinfo-maintain.iml" filepath="$PROJECT_DIR$/userinfo-parent/userinfo-maintain/userinfo-maintain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userinfo-parent/userinfo-parent.iml" filepath="$PROJECT_DIR$/userinfo-parent/userinfo-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viscosity-parent/viscosity-mr-cdh/viscosity-mr-cdh.iml" filepath="$PROJECT_DIR$/viscosity-parent/viscosity-mr-cdh/viscosity-mr-cdh.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viscosity-parent/viscosity-parent.iml" filepath="$PROJECT_DIR$/viscosity-parent/viscosity-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viscosity-parent/viscosity-play/viscosity-play.iml" filepath="$PROJECT_DIR$/viscosity-parent/viscosity-play/viscosity-play.iml" />
+      <module fileurl="file://$PROJECT_DIR$/viscosity-parent/viscosity-to-hdfs/viscosity-to-hdfs.iml" filepath="$PROJECT_DIR$/viscosity-parent/viscosity-to-hdfs/viscosity-to-hdfs.iml" />
+    </modules>
+  </component>
+</project>
