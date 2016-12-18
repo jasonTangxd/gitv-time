@@ -45,7 +45,21 @@
     <favorites_list name="gitv-kang" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="ORC文件测试.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/专属格式/ORC文件测试.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SECOND">
+              <first_editor relative-caret-position="177">
+                <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="44" />
+                <folding />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -82,15 +96,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/src/main/java/cn/gitv/bi/realtime/usercount/start/Start_up.java" />
-        <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/src/main/java/cn/gitv/bi/rtvod/usercount/bolts/Distinguish_Bolt.java" />
-        <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/src/main/java/cn/gitv/bi/rtvod/usercount/utils/StringHandle.java" />
-        <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/src/main/java/cn/gitv/bi/rtvod/usercount/bolts/Vod_FullMac_Bolt.java" />
-        <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/src/main/java/cn/gitv/bi/rtvod/usercount/bolts/Vod_Sum_Bolt.java" />
-        <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/src/main/java/cn/gitv/bi/rtvod/usercount/constant/Constant.java" />
-        <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/src/main/java/cn/gitv/bi/rtvod/usercount/bolts/VodFilter_Bolt.java" />
-        <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/src/main/java/cn/gitv/bi/rtvod/usercount/bolts/FilterAll.java" />
-        <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/src/main/java/cn/gitv/bi/rtvod/usercount/constant/Properties.java" />
         <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/src/main/java/cn/gitv/bi/rtvod/usercount/bolts/UserCount.java" />
         <option value="$PROJECT_DIR$/realtime-parent/realtime-user-count-vod/README.md" />
         <option value="$PROJECT_DIR$/dailyjob-parent/pom.xml" />
@@ -133,6 +138,15 @@
         <option value="$PROJECT_DIR$/viscosity-parent/formats-test/RESULT1.md" />
         <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/Text2Parquet.sh" />
         <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/PARQUET.md" />
+        <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/PARQUET_ALONE.md" />
+        <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/ALONE_FORMAT/PARQUET_ALONE.md" />
+        <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/ALONE_FORMAT/Sth.md" />
+        <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/ALONE_FORMAT/ORC_ALONE.md" />
+        <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/ALONE_FORMAT/text2orc.sh" />
+        <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/专属格式/PARQUET文件测试.md" />
+        <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/专属格式/ORC文件测试.md" />
+        <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/专属格式/sth2say.md" />
+        <option value="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/50G数据测试.md" />
       </list>
     </option>
   </component>
@@ -376,6 +390,60 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gitv-kang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gitv-kang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viscosity-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gitv-kang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gitv-kang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viscosity-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viscosity-format-test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gitv-kang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gitv-kang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viscosity-parent" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="viscosity-format-test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="专属格式" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -402,11 +470,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/ALONE_FORMAT" />
       <recent name="$PROJECT_DIR$/viscosity-parent" />
       <recent name="$PROJECT_DIR$/viscosity-parent/viscosity-to-hdfs" />
       <recent name="$PROJECT_DIR$/realtime-parent" />
       <recent name="$PROJECT_DIR$/cluster-deploy/system-monitor/monitor_center/templates/welcome_inbox" />
-      <recent name="$PROJECT_DIR$/cluster-deploy/system-monitor/monitor_center/templates" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="cn.gitv.bi.rtvod.usercount.utils" />
@@ -416,11 +484,11 @@
       <recent name="cn.gitv.bi.external.storm2hdfs.bolt" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/viscosity-parent/viscosity-format-test/ALONE_FORMAT" />
       <recent name="$PROJECT_DIR$/realtime-parent/document" />
       <recent name="$PROJECT_DIR$/realtime-parent/realtime-py-ttl" />
       <recent name="$PROJECT_DIR$/dailyjob-parent/example/src/main/java/cn.bi.gitv.dailtjob.example.start/cn/bi/gitv/dailtjob/example" />
       <recent name="$PROJECT_DIR$/cluster-deploy/system-monitor/monitor_center/templates/fire_text" />
-      <recent name="$PROJECT_DIR$/cluster-deploy/system-monitor/monitor_center/templates" />
     </key>
   </component>
   <component name="RunManager" selected="Bash.Text2Parquet.sh">
@@ -954,7 +1022,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294686" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="SBT Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -964,7 +1032,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23774509" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294686" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.3393035" sideWeight="0.76121795" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2676617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38507462" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.24571079" sideWeight="0.49661836" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1012,27 +1080,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/dailyjob-parent/example/src/main/java/cn/bi/gitv/dayjob/example/start/MyReduce.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/dailyjob-parent/example/src/main/java/cn/bi/gitv/dayjob/example/start/MyMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-mr-cdh/src/main/java/cn/gitv/bi/viscosity/cdhmr/constant/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-mr-cdh/src/main/java/cn/gitv/bi/viscosity/cdhmr/start/Start_up.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -1353,17 +1400,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/RESULT_DAY.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="454">
-            <caret line="216" column="11" lean-forward="false" selection-start-line="216" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-mr-cdh/attach/excute.sh">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1380,30 +1416,71 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/text2parquet.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="14" column="32" lean-forward="true" selection-start-line="14" selection-start-column="32" selection-end-line="14" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/PARQUET_ALONE.md">
+    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/日量数据测试.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="456">
-            <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+          <first_editor relative-caret-position="331">
+            <caret line="325" column="8" lean-forward="true" selection-start-line="325" selection-start-column="0" selection-end-line="326" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/RESULT_MORE.md">
+    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/专属格式/text2orc.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="19" column="44" lean-forward="false" selection-start-line="19" selection-start-column="44" selection-end-line="19" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/专属格式/text2parquet.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/50G数据测试.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="372">
-            <caret line="134" column="0" lean-forward="false" selection-start-line="134" selection-start-column="0" selection-end-line="153" selection-end-column="27" />
+          <first_editor relative-caret-position="432">
+            <caret line="18" column="12" lean-forward="true" selection-start-line="18" selection-start-column="12" selection-end-line="18" selection-end-column="12" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/专属格式/sth2say.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="24">
+            <caret line="1" column="4" lean-forward="false" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/专属格式/PARQUET文件测试.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1272">
+            <caret line="53" column="44" lean-forward="true" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/viscosity-parent/viscosity-format-test/专属格式/ORC文件测试.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SECOND">
+          <first_editor relative-caret-position="177">
+            <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="44" />
             <folding />
           </first_editor>
           <second_editor />
