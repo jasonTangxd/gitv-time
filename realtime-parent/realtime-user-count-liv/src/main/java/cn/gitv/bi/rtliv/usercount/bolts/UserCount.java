@@ -66,8 +66,6 @@ public class UserCount extends AbstractRedisBolt {
             String partnerChannel = StringHandle.str_join("partner", partner, channel);// partner|cmcc|cctv-1
             CacheInMapAdd(totalChannel);
             CacheInMapAdd(partnerChannel);
-//            jedisCommands.incr(totalChannel);
-//            jedisCommands.incr(partnerChannel);
         }
         if (DEC != null) {
             List<String> des = StringHandle.str_split(DEC);
@@ -77,8 +75,6 @@ public class UserCount extends AbstractRedisBolt {
             String partnerChannel = StringHandle.str_join("partner", partner, channel);// partner|cmcc|cctv-1
             CacheInMapDec(totalChannel);
             CacheInMapDec(partnerChannel);
-//            jedisCommands.decr(totalChannel);
-//            jedisCommands.decr(partnerChannel);
         }
     }
 
@@ -121,7 +117,7 @@ public class UserCount extends AbstractRedisBolt {
     @Override
     public Map<String, Object> getComponentConfiguration() {
         Map<String, Object> conf = new HashMap<String, Object>();
-        conf.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, 1);//每60s持久化一次数据
+        conf.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, 1);
         return conf;
     }
 
