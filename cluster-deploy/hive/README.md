@@ -44,7 +44,7 @@ nohup hive --service metastore >nohup.out 2>&1 &
 $ hive --service hiveserver2
 ```
 
-* 后来为了实现metastore的HA服务,在两台机器上启动metastore的服务(150、151)
+* 后来为了实现metastore的HA服务,在两台机器上启动metastore server的服务(150、151)
 client配置文件改下:
 ```
 <property>

@@ -13,45 +13,45 @@
 
     <property>
         <name>yarn.resourcemanager.hostname.rm1</name>
-        <value>10.10.121.138</value>
+        <value>master2.gitv.rack2.bk</value>
     </property>
 
     <property>
         <name>yarn.resourcemanager.hostname.rm2</name>
-        <value>10.10.121.139</value>
+        <value>master1.gitv.rack1.bk</value>
     </property>
 
     <property>
         <name>yarn.resourcemanager.address.rm1</name>
-        <value>10.10.121.138:8132</value>
+        <value>master2.gitv.rack2.bk:8132</value>
     </property>
     <property>
         <name>yarn.resourcemanager.address.rm2</name>
-        <value>10.10.121.139:8132</value>
+        <value>master1.gitv.rack1.bk:8132</value>
     </property>
     <property>
         <name>yarn.resourcemanager.scheduler.address.rm1</name>
-        <value>10.10.121.138:8130</value>
+        <value>master2.gitv.rack2.bk:8130</value>
     </property>
     <property>
         <name>yarn.resourcemanager.scheduler.address.rm2</name>
-        <value>10.10.121.139:8130</value>
+        <value>master1.gitv.rack1.bk:8130</value>
     </property>
     <property>
         <name>yarn.resourcemanager.resource-tracker.address.rm1</name>
-        <value>10.10.121.138:8131</value>
+        <value>master2.gitv.rack2.bk:8131</value>
     </property>
     <property>
         <name>yarn.resourcemanager.resource-tracker.address.rm2</name>
-        <value>10.10.121.139:8131</value>
+        <value>master1.gitv.rack1.bk:8131</value>
     </property>
     <property>
         <name>yarn.resourcemanager.webapp.address.rm1</name>
-        <value>10.10.121.138:8088</value>
+        <value>master2.gitv.rack2.bk:8088</value>
     </property>
     <property>
         <name>yarn.resourcemanager.webapp.address.rm2</name>
-        <value>10.10.121.139:8088</value>
+        <value>master1.gitv.rack1.bk:8088</value>
     </property>
 
     <property>
@@ -117,14 +117,20 @@
 
     <property>
         <name>yarn.nodemanager.resource.memory-mb</name>
-        <value>65536</value>
-        <description>表示该节点上YARN可使用的物理内存总量,默认是8192MB</description>
+        <value>122880</value>
+        <description>表示该节点上YARN可使用的物理内存总量，默认是8192（MB）,注意,如果你的节点内存资源不够8GB,则需要调减小这个值,而YARN不会智能的探测节点的物理内存总量</description>
     </property>
 
     <property>
         <name>yarn.scheduler.minimum-allocation-mb</name>
         <value>2048</value>
         <description>单个任务可申请的最少物理内存量,默认是1024MB</description>
+    </property>
+
+    <property>
+        <name>yarn.scheduler.maximum-allocation-mb</name>
+        <value>15360</value>
+        <description>单个任务可申请的最多物理内存量，默认是8192MB</description>
     </property>
 
     <property>
