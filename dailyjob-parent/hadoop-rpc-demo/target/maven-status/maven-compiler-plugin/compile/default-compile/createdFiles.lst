@@ -1,5 +1,0 @@
-cn/gitv/bi/dailyjob/hadooprpc/client/RPCClient.class
-cn/gitv/bi/dailyjob/hadooprpc/constant/Constant.class
-cn/gitv/bi/dailyjob/hadooprpc/protocol/ClientProtocol.class
-cn/gitv/bi/dailyjob/hadooprpc/protocol/ClientProtocolImpl.class
-cn/gitv/bi/dailyjob/hadooprpc/server/RPCServer.class

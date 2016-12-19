@@ -1,8 +1,0 @@
-/Users/Kang/Project/ideal/gitv-kang/launcher-parent/launcher-log-clean/src/main/java/cn/gitv/bi/launcher/logclean/constant/MyProperties.java
-/Users/Kang/Project/ideal/gitv-kang/launcher-parent/launcher-log-clean/src/main/java/cn/gitv/bi/launcher/logclean/scheme/NginxScheme.java
-/Users/Kang/Project/ideal/gitv-kang/launcher-parent/launcher-log-clean/src/main/java/cn/gitv/bi/launcher/logclean/bolt/FilterData_Bolt.java
-/Users/Kang/Project/ideal/gitv-kang/launcher-parent/launcher-log-clean/src/main/java/cn/gitv/bi/launcher/logclean/mapper/FieldMapToBean.java
-/Users/Kang/Project/ideal/gitv-kang/launcher-parent/launcher-log-clean/src/main/java/cn/gitv/bi/launcher/logclean/bolt/URLDecode_Bolt.java
-/Users/Kang/Project/ideal/gitv-kang/launcher-parent/launcher-log-clean/src/main/java/cn/gitv/bi/launcher/logclean/start/Start_up.java
-/Users/Kang/Project/ideal/gitv-kang/launcher-parent/launcher-log-clean/src/main/java/cn/gitv/bi/launcher/logclean/tokafka/ActionKafkaTopicSelector.java
-/Users/Kang/Project/ideal/gitv-kang/launcher-parent/launcher-log-clean/src/main/java/cn/gitv/bi/launcher/logclean/tokafka/LogKafkaMapper.java

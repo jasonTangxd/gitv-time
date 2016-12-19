@@ -1,7 +1,0 @@
-cn/gitv/bi/launcher/tohdfs/start/Start_up.class
-cn/gitv/bi/launcher/tohdfs/constant/Constant.class
-cn/gitv/bi/launcher/tohdfs/constant/MyProperties.class
-cn/gitv/bi/launcher/tohdfs/bolt/PartitionBolt.class
-cn/gitv/bi/launcher/tohdfs/myimp/hdfs/ActionLogDatePartition.class
-cn/gitv/bi/launcher/tohdfs/myimp/kafka/TopicsTupleBuilder.class
-cn/gitv/bi/launcher/tohdfs/myimp/kafka/KafkaBoltUtil.class
