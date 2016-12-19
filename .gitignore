@@ -1,28 +1,51 @@
-## .gitignore for mac os x
-
+.lein-repl-history
+/classes
+/lib
+.emacs-project
 .DS_Store
-.AppleDouble
-.LSOverride
-Icon
-target*
+*.fyc
+*.rbc
+*.pyc
+CHILD
+CHILDMAKER
+NANNY
+\#project.clj\#
+.\#project.clj
+.lein-failures
+_release
+*.zip
+*.tar.gz
+.lein-deps-sum
+target
+/.project/
+/.lein-plugins/
+#.*
+!/.travis.yml
+!/.gitignore
+_site
+dependency-reduced-pom.xml
+metastore_db
+build
+/docs/javadocs
+*.class
 
-# Thumbnails
-._*
+# logs
+logs
+*.log
 
-# Files that might appear on external disk
-.Spotlight-V100
-.Trashes
-
-## hack for graddle wrapper
-!wrapper/*.jar
-!**/wrapper/*.jar
-
-## .gitignore for intellij
-
+# Intellij
 *.iml
 *.ipr
 *.iws
-.idea/
+.idea
 
-#.gitignore for java
-*.class
+# Package Files
+*.jar
+*.war
+*.ear
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+# ignore vagrant files
+/integration-test/config/.vagrant/
