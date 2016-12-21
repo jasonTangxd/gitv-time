@@ -47,5 +47,9 @@ logs
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 
-# ignore vagrant files
-/integration-test/config/.vagrant/
+dailyjob-parent/sql/
+external-parent/storm-hdfs-plus/src/test/java/cn/gitv/bi/storm/
+external-parent/storm-hdfs-plus/src/test/java/org/
+launcher-parent/launcher-spark-sql/
+project-debug-logs/
+launcher-parent/launcher-bystorm-2hdfs/

@@ -9,7 +9,7 @@ nohup /data/soft/rabbitmq_server-3.6.5/sbin/rabbitmq-server > /data/soft/rabbitm
 ```
 确认在rabbitmq成功启动,且需要的queue is not null的情况下:
 ```
-nohup java -jar uif_consumer.jar > nohup.out 2>&1 &
+nohup java -jar uif_consumer.jar -Xms2G -Xmx5G -Xloggc:~/uif_consumer-gc.log > nohup.out 2>&1 &
 ```
 
 ## 简单小结

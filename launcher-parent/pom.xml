@@ -13,7 +13,7 @@
     <version>1.0</version>
     <modules>
         <module>launcher-log-clean</module>
-        <module>launcher-to-hdfs</module>
+        <module>launcher-bystorm-2hdfs</module>
         <module>launcher-bean-parse</module>
     </modules>
 </project>

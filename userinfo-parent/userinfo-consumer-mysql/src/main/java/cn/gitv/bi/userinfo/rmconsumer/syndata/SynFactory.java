@@ -6,16 +6,16 @@ import java.util.Map;
 import static cn.gitv.bi.userinfo.rmconsumer.constant.Constant.*;
 
 public class SynFactory {
-    public static Map<String, Super_SynData> factory = new HashMap<String, Super_SynData>();
+    public static Map<String, SuperSynData> factory = new HashMap<String, SuperSynData>();
 
     static {
-        factory.put(AH_CMCC, new AH_CMCC_SynData());
-        factory.put(JS_CMCC, new JS_CMCC_SynData());
-        factory.put(JS_CMCC_CP, new JS_CMCC_CP_SynData());
+        factory.put(AH_CMCC, new AH_CMCC_SynData(AH_CMCC));
+        factory.put(JS_CMCC, new JS_CMCC_SynData(JS_CMCC));
+        factory.put(JS_CMCC_CP, new JS_CMCC_CP_SynData(JS_CMCC_CP));
     }
 
-    public static Super_SynData getSynInstance(String routingKey) {
-        Super_SynData synData = factory.get(routingKey);
+    public static SuperSynData getSynInstance(String routingKey) {
+        SuperSynData synData = factory.get(routingKey);
         if (synData == null) {
             throw new IllegalArgumentException("no this Partner imp!");
         }

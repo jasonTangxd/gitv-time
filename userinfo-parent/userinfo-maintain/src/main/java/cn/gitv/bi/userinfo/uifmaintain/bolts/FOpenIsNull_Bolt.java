@@ -42,7 +42,7 @@ public class FOpenIsNull_Bolt implements IRichBolt {
 			BoundStatement read = Mapper.fopen_isnull(ps, partner, mac);
 			AsyncBack.fopen_isnull(session, read, collector, input);
 		} catch (Exception e) {
-			log.error("FOpenIsNull_Bolt:-->{}", e.getMessage());
+			log.error("", e);
 			collector.fail(input);
 		}
 	}

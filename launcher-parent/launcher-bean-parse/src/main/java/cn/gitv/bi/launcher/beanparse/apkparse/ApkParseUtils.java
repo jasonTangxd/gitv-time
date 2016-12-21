@@ -1,6 +1,8 @@
 package cn.gitv.bi.launcher.beanparse.apkparse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Map;
 
@@ -8,6 +10,8 @@ import java.util.Map;
  * Created by Kang on 2016/11/26.
  */
 public class ApkParseUtils {
+    private static Logger LOG = LoggerFactory.getLogger(ApkParseUtils.class);
+
     /**
      * 解析apk->json后的标准json字段-->ApkBean
      */
@@ -54,7 +58,8 @@ public class ApkParseUtils {
                 }
             }
         } catch (Exception e) {
-//            log.error("ApkParseUtils ERROR josn解析异常-->{}", e.getMessage()); 因为首次测试数据大多数没有改为''用的是\x22，所以pass
+            LOG.debug("ApkParseUtils ERROR josn解析异常-->{}", e);
+            /*因为首次测试数据大多数没有改为'',用的是\x22，所以pass*/
         }
         return apkBean;
     }

@@ -113,7 +113,7 @@ public class TopFilter_Bolt implements IRichBolt {
                 }
             }
         } catch (Exception e) {
-            log.error("TopFilter_Bolt exception-->", e);
+            log.error("", e);
         } finally {
             collector.ack(input);
         }

@@ -10,9 +10,9 @@
 		<property name="user">gitv_rd</property>
 		<property name="password">1234.gitv_rd</property>
 		<property name="acquireIncrement">10</property>
-		<property name="initialPoolSize">20</property>
-		<property name="minPoolSize">10</property>
-		<property name="maxPoolSize">30</property>
+		<property name="initialPoolSize">5</property>
+		<property name="minPoolSize">5</property>
+		<property name="maxPoolSize">20</property>
 	</named-config>
 
 	<named-config name="JS_CMCC">

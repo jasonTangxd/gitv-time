@@ -47,7 +47,8 @@ public class RabbitMQ_Bolt implements IRichBolt {
                 channel.basicPublish(RabbitConnection.EXCHANGE_NAME, partner, null, message.getBytes());
             }
         } catch (Exception e) {
-            log.error("RabbitMQ_Bolt--{}", e.getMessage());
+            log.error("", e);
+            collector.fail(input);
         } finally {
             collector.ack(input);
         }

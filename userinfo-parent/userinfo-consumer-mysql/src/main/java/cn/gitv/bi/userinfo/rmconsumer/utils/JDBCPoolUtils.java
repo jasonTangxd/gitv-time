@@ -11,7 +11,7 @@ public class JDBCPoolUtils {
     private static Logger logger = LoggerFactory.getLogger(JDBCPoolUtils.class);
     private ComboPooledDataSource cpds = null;
 
-    public JDBCPoolUtils(String partner) {
+    private JDBCPoolUtils(String partner) {
         cpds = new ComboPooledDataSource(partner);
     }
 

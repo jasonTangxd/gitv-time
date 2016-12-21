@@ -16,6 +16,7 @@
 ```
 cd /data/opt/soft/spark-2.0.1-bin-hadoop2.7
 ```
+
 ```
 bin/spark-submit --master yarn --deploy-mode cluster --driver-memory 1g --executor-memory 1g --executor-cores 2 examples/src/main/python/pi.py 1000
 ```

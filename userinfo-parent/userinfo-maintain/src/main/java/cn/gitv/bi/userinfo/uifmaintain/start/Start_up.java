@@ -54,7 +54,6 @@ public class Start_up {
 			try {
 				StormSubmitter.submitTopology(args[0], conf, builder.createTopology());
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

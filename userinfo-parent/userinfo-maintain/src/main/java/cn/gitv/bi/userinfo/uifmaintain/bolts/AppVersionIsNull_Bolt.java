@@ -1,4 +1,5 @@
 package cn.gitv.bi.userinfo.uifmaintain.bolts;
+
 import cn.gitv.bi.userinfo.uifmaintain.constant.LogConst;
 import cn.gitv.bi.userinfo.uifmaintain.storage.AsyncBack;
 import cn.gitv.bi.userinfo.uifmaintain.storage.Mapper;
@@ -65,10 +66,8 @@ public class AppVersionIsNull_Bolt implements IRichBolt {
                     break;
             }
         } catch (Exception e) {
-            log.error("AppVersionIsNull_Bolt:-->{}", e.getMessage());
+            log.error("", e);
             collector.fail(input);
-        } finally {
-            collector.ack(input);
         }
     }
 

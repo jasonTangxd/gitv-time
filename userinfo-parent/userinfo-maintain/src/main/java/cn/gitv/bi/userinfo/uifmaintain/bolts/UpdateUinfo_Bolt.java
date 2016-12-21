@@ -34,11 +34,11 @@ public class UpdateUinfo_Bolt implements IRichBolt {
             String app_version = input.getStringByField("app_version");
             String last_open = input.getStringByField("last_open");
             String province = input.getStringByField("province");
-            collector.emit(LogConst.FOPEN, new Values(mac, partner, last_open));
-            collector.emit(LogConst.APPV, new Values(type, mac, partner, app_version));
-            collector.emit(LogConst.NOJUDGE, new Values(mac, partner, last_open, province));
+            collector.emit(LogConst.FOPEN, input, new Values(mac, partner, last_open));
+            collector.emit(LogConst.APPV, input, new Values(type, mac, partner, app_version));
+            collector.emit(LogConst.NOJUDGE, input, new Values(mac, partner, last_open, province));
         } catch (Exception e) {
-            log.error("UpdateUinfo_Bolt:-->{}", e.getMessage());
+            log.error("", e);
         } finally {
             collector.ack(input);
         }

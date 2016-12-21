@@ -7,10 +7,15 @@
         <groupId>cn.gitv.bi</groupId>
         <version>1.0</version>
     </parent>
+
+    <properties>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+    </properties>
+
     <artifactId>userinfo-consumer-mysql</artifactId>
     <modelVersion>4.0.0</modelVersion>
     <version>1.0.0</version>
-
     <dependencies>
         <dependency>
             <groupId>org.apache.curator</groupId>

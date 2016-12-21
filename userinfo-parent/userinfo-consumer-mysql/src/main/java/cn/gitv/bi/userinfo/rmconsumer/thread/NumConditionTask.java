@@ -1,34 +1,25 @@
 package cn.gitv.bi.userinfo.rmconsumer.thread;
 
-import cn.gitv.bi.userinfo.rmconsumer.syndata.Super_SynData;
-import cn.gitv.bi.userinfo.rmconsumer.utils.JDBCPoolUtils;
-import com.datastax.driver.core.PreparedStatement;
-import com.datastax.driver.core.Session;
 import com.rabbitmq.client.Channel;
+import com.rabbitmq.client.GetResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.IOException;
-import java.util.Set;
 import java.util.TimerTask;
+import java.util.concurrent.BlockingQueue;
 
 import static cn.gitv.bi.userinfo.rmconsumer.constant.Constant.LIMIT_NUM;
-import static cn.gitv.bi.userinfo.rmconsumer.thread.PullData2Set.pool;
 
 public class NumConditionTask extends TimerTask {
     private Logger logger = LoggerFactory.getLogger(NumConditionTask.class);
     private Channel channel = null;
     private String queueName = null;
-    private Super_SynData synInstance = null;
-    private Session session;
-    private PreparedStatement ps;
+    BlockingQueue<String> blockingQueue;
 
-    public NumConditionTask(Channel channel, String queueName, Super_SynData synInstance, Session session, PreparedStatement ps) {
+    public NumConditionTask(String routingKey, Channel channel, BlockingQueue<String> blockingQueue) {
+        this.queueName = routingKey;
         this.channel = channel;
-        this.queueName = queueName;
-        this.synInstance = synInstance;
-        this.session = session;
-        this.ps = ps;
+        this.blockingQueue = blockingQueue;
     }
 
     public void run() {
@@ -36,13 +27,18 @@ public class NumConditionTask extends TimerTask {
         try {
             long num = channel.messageCount(queueName);
             if (num > LIMIT_NUM) {
-                Set<String> macList = PullData2Set.pullfromMysql(channel, queueName, LIMIT_NUM);
-                logger.debug("[{}] NumConditionTask is called,and content is {}", queueName, macList);
-                pool.execute(new TransRuner(macList, synInstance, JDBCPoolUtils.getConnection(queueName), session, ps));
+                for (int i = 0; i < num; i++) {
+                    GetResponse gp = channel.basicGet(queueName, true);
+                    if (gp == null) {
+                        return;
+                    }
+                    String content = new String(gp.getBody());
+                    blockingQueue.put(content);
+                }
             } else {
                 logger.debug("[{}] num of NumConditionTask is less {},so pass this time!", queueName, LIMIT_NUM);
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             logger.error("", e);
         }
 
