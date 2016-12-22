@@ -15,6 +15,5 @@
     <modules>
         <module>storm-hdfs-plus</module>
         <module>netty-rpc-imp</module>
-        <module>kafka-hadoop-loader</module>
     </modules>
 </project>

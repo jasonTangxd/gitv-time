@@ -15,5 +15,6 @@
         <module>launcher-log-clean</module>
         <module>launcher-bystorm-2hdfs</module>
         <module>launcher-bean-parse</module>
+        <module>kafka-hadoop-loader</module>
     </modules>
 </project>
