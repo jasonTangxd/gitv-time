@@ -32,6 +32,10 @@ public class MsgMetadataWritable implements Writable {
     private KafkaInputSplit split;
     private long offset;
 
+    public void setTimestamp(Long timestamp) {
+        this.timestamp = timestamp;
+    }
+
     /**
      * @deprecated Constructor used by Hadoop to init the class through reflection. Do not remove...
      */

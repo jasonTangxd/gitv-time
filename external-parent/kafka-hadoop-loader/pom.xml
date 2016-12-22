@@ -69,6 +69,11 @@
             <artifactId>kafka_${scala.version}</artifactId>
             <version>${kafka.version}</version>
         </dependency>
+        <dependency>
+            <groupId>cn.gitv.bi</groupId>
+            <artifactId>launcher-to-hdfs</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>

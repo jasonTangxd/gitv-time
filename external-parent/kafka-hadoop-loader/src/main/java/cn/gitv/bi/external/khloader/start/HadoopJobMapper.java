@@ -30,14 +30,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 public class HadoopJobMapper extends Mapper<MsgMetadataWritable, BytesWritable, MsgMetadataWritable, BytesWritable> {
-    private final static String SEPARATOR = "|";
     static Logger LOG = LoggerFactory.getLogger(HadoopJobMapper.class);
-
     private static final String CONFIG_TIMESTAMP_EXTRACTOR_CLASS = "mapper.timestamp.extractor.class";
-
     private TimestampExtractor extractor;
 
 
@@ -46,7 +46,8 @@ public class HadoopJobMapper extends Mapper<MsgMetadataWritable, BytesWritable, 
     }
 
     public static boolean isTimestampExtractorConfigured(Configuration conf) {
-        return !conf.get(CONFIG_TIMESTAMP_EXTRACTOR_CLASS, "").equals("");
+//        return conf.get(CONFIG_TIMESTAMP_EXTRACTOR_CLASS, "").equals("");
+        return true;
     }
 
 
@@ -76,11 +77,19 @@ public class HadoopJobMapper extends Mapper<MsgMetadataWritable, BytesWritable, 
                     outputKey = new MsgMetadataWritable(key, timestamp);
                 }
                 BytesWritable outputValue = value;
-                /**/
-                String strValue = MapInputParse.bytesWritable2String(outputValue);
-                List<String> line = StringHandle.str_token_split(strValue, SEPARATOR);
-                String dateTime = line.get(line.size() - 1);
-                /**/
+                String line = MapInputParse.bytesWritable2String(outputValue);
+                List<String> strings = StringHandle.str_token_split(line, "|");
+                String logTime = strings.get(strings.size() - 1);
+//                LOG.warn("HadoopJobMap`s logtime is {}", logTime);
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+                Date date = null;
+                try {
+                    date = simpleDateFormat.parse(logTime);
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                outputKey.setTimestamp(date.getTime());
+//                LOG.warn("HadoopJobMap`s MsgMetadataWritable outputKey is {}", outputKey.getTimestamp());
                 context.write(outputKey, outputValue);
             }
         } catch (InterruptedException e) {
