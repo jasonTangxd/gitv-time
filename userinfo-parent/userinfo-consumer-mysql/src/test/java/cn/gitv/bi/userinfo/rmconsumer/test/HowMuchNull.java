@@ -14,9 +14,10 @@ import java.util.Iterator;
  * Created by Kang on 2016/12/21.
  */
 public class HowMuchNull {
-    //JS_CMCC_CP无法同步数据：64935/1003210
-    //AH_CMCC无法同步数据：676/141913
-    //ZJYD:504428/665396
+    //JS_CMCC_CP    :   64935/1003210
+    //AH_CMCC   ：   676/141913
+    //ZJYD  :   44124/1074001
+    //JS_CMCC   :   843/6336
     public static void main(String[] args) throws IOException {
         BufferedWriter bufw = null;
         Session session = CassandraConnection.getSession();
@@ -24,7 +25,7 @@ public class HowMuchNull {
         int count = 0;
         try {
             bufw = new BufferedWriter(new FileWriter("/Users/Kang/result.csv"));
-            ResultSet rs = session.execute("SELECT mac_addr,city_name  from userinfo.user_info where partner='JS_CMCC_CP'");
+            ResultSet rs = session.execute("SELECT mac_addr,city_name from userinfo.user_info where partner='JS_CMCC'");
             Iterator<Row> it = rs.iterator();
             while (it.hasNext()) {
                 total++;

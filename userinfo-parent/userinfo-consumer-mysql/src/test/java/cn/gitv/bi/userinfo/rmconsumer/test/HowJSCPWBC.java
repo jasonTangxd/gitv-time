@@ -113,6 +113,5 @@ public class HowJSCPWBC {
             }
         }
         System.out.println("total is:" + total);
-        System.out.println("mysqlNum is:" + mysqlNum);
     }
 }
