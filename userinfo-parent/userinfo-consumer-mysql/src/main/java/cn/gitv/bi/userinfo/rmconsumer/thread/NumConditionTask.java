@@ -11,7 +11,7 @@ import java.util.concurrent.BlockingQueue;
 import static cn.gitv.bi.userinfo.rmconsumer.constant.Constant.LIMIT_NUM;
 
 public class NumConditionTask extends TimerTask {
-    private Logger logger = LoggerFactory.getLogger(NumConditionTask.class);
+    private Logger LOG = LoggerFactory.getLogger(NumConditionTask.class);
     private Channel channel = null;
     private String queueName = null;
     BlockingQueue<String> blockingQueue;
@@ -33,13 +33,20 @@ public class NumConditionTask extends TimerTask {
                         return;
                     }
                     String content = new String(gp.getBody());
-                    blockingQueue.put(content);
+                    boolean isNotFull = blockingQueue.offer(content);
+                    if (isNotFull) {
+                        //正常存入queue打印log
+                        LOG.info("{} of NumConditionTask put {} to queue", queueName, content);
+                    } else {
+                        //队列满了,不再进行本次存取,并阻塞式把当前这条记录存入
+                        LOG.info("{} of NumConditionTask queue is full", queueName, content);
+                        blockingQueue.put(content);
+                        break;
+                    }
                 }
-            } else {
-                logger.debug("[{}] num of NumConditionTask is less {},so pass this time!", queueName, LIMIT_NUM);
             }
         } catch (Exception e) {
-            logger.error("", e);
+            LOG.error("", e);
         }
 
     }

@@ -1,4 +1,4 @@
-package cn.gitv.bi.userinfo.rmconsumer.start;
+package cn.gitv.bi.userinfo.rmconsumer.others;
 
 import cn.gitv.bi.userinfo.rmconsumer.bean.UserInfo;
 import cn.gitv.bi.userinfo.rmconsumer.storage.Mapper;

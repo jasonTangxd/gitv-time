@@ -14,7 +14,7 @@ import java.util.Iterator;
  * Created by Kang on 2016/12/21.
  */
 public class HowMuchNull {
-    //JS_CMCC_CP    :   64935/1003210
+    //JS_CMCC_CP    :   65023/1003449
     //AH_CMCC   ：   676/141913
     //ZJYD  :   44124/1074001
     //JS_CMCC   :   843/6336
@@ -22,10 +22,10 @@ public class HowMuchNull {
         BufferedWriter bufw = null;
         Session session = CassandraConnection.getSession();
         int total = 0;
-        int count = 0;
+        int notFound = 0;
         try {
             bufw = new BufferedWriter(new FileWriter("/Users/Kang/result.csv"));
-            ResultSet rs = session.execute("SELECT mac_addr,city_name from userinfo.user_info where partner='JS_CMCC'");
+            ResultSet rs = session.execute("SELECT mac_addr,city_name from userinfo.user_info where partner='JS_CMCC_CP'");
             Iterator<Row> it = rs.iterator();
             while (it.hasNext()) {
                 total++;
@@ -42,13 +42,13 @@ public class HowMuchNull {
                     bufw.write(info);
                     bufw.newLine();
                     System.out.println(info);
-                    ++count;
+                    ++notFound;
                 }
             }
         } catch (Exception e) {
             System.out.println("time out");
         } finally {
-            System.out.println(count);
+            System.out.println(notFound);
             System.out.println(total);
             bufw.close();
             System.out.println("over");

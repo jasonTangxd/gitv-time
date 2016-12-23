@@ -10,7 +10,7 @@ import java.util.concurrent.BlockingQueue;
 
 
 public class TimeConditionTask extends TimerTask {
-    private Logger logger = LoggerFactory.getLogger(TimeConditionTask.class);
+    private static Logger LOG = LoggerFactory.getLogger(TimeConditionTask.class);
     private Channel channel = null;
     private String queueName = null;
     private BlockingQueue<String> blockingQueue = null;
@@ -34,11 +34,21 @@ public class TimeConditionTask extends TimerTask {
                         return;
                     }
                     String content = new String(gp.getBody());
-                    blockingQueue.put(content);
+                    //把从rabbit中获取的mac存入queue中
+                    boolean isNotFull = blockingQueue.offer(content);
+                    if (isNotFull) {
+                        //正常存入queue打印log
+                        LOG.info("{} of TimeConditionTask put {} to queue", queueName, content);
+                    } else {
+                        //队列满了,不再进行本次存取,并阻塞式把当前这条记录存入
+                        LOG.info("{} of TimeConditionTask queue is full", queueName, content);
+                        blockingQueue.put(content);
+                        break;
+                    }
                 }
             }
         } catch (Exception e) {
-            logger.error("", e);
+            LOG.error("", e);
         }
     }
 

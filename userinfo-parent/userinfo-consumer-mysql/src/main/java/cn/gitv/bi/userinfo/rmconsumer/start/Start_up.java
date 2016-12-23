@@ -30,8 +30,11 @@ public class Start_up {
     public static void main(String[] args) throws Exception {
         //根据可操作partnerList启动定时器
         for (String routingKey : ZkObserverUtils.getCanUsePartnerList()) {
+            //为每个可同步的partner启动一个线程安全的queue
             BlockingQueue syncQueue = new LinkedBlockingQueue(5000);
+            //启动时间维度的定时器
             new Timer().scheduleAtFixedRate(new TimeConditionTask(routingKey, channel, syncQueue), DELAY_TIME, PERIOD_TIME);
+            //启动数量维度的定时器
             new Timer().scheduleAtFixedRate(new NumConditionTask(routingKey, channel, syncQueue), 0, 1000);
             executorService.submit(new QueueConsumer(routingKey, session, syncQueue));
         }
