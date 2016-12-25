@@ -23,14 +23,10 @@ import org.I0Itec.zkclient.ZkClient;
 import org.I0Itec.zkclient.exception.ZkMarshallingError;
 import org.I0Itec.zkclient.exception.ZkNoNodeException;
 import org.I0Itec.zkclient.serialize.ZkSerializer;
-import org.codehaus.jackson.JsonFactory;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.Closeable;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,57 +35,73 @@ import java.util.Map;
 public class KafkaZkUtils implements Closeable {
 
     private static final Logger log = LoggerFactory.getLogger(KafkaZkUtils.class);
-
     public static final String CONSUMERS_PATH = "/consumers";
     public static final String BROKER_IDS_PATH = "/brokers/ids";
     public static final String BROKER_TOPICS_PATH = "/brokers/topics";
     public static final String PARTITIONS = "partitions";
-
-    private final ObjectMapper jsonMapper;
+    private JacksonParseUtils jacksonParseUtils;
 
     private final ZkClient client;
 
+    /**
+     * @param zkConnectString zk的连接host
+     * @param sessionTimeout  session的超时设置
+     * @param connectTimeout  连接超时
+     */
     public KafkaZkUtils(String zkConnectString, int sessionTimeout, int connectTimeout) {
         client = new ZkClient(zkConnectString, sessionTimeout, connectTimeout, new StringSerializer());
-        jsonMapper = new ObjectMapper(new JsonFactory());
+        jacksonParseUtils = new JacksonParseUtils();
         log.info("Connected zk");
     }
 
+    /**
+     * @param brokerId kafka broker
+     * @return 返回broker的name
+     */
     public String getBrokerName(int brokerId) {
-        Map<String, Object> map = parseJsonAsMap(getBrokerInfo(brokerId));
+        Map<String, Object> map = jacksonParseUtils.parseJsonAsMap(getBrokerInfo(brokerId));
         return map.get("host") + ":" + map.get("port");
     }
 
+    /**
+     * @param brokerId kafka broker
+     * @return 返回broker的信息
+     */
     public String getBrokerInfo(int brokerId) {
         return client.readData(BROKER_IDS_PATH + "/" + brokerId);
     }
 
     /**
+     * @param topic
+     * @return 分区-分区leader
      * Map of PartitionId : BrokerId where by BrokerId is the leader
      */
     public Map<Integer, Integer> getPartitionLeaders(String topic) {
         Map<Integer, Integer> partitionLeaders = new HashMap<>();
-        List<String> partitions = getChildrenParentMayNotExist(BROKER_TOPICS_PATH + "/" + topic + "/" + PARTITIONS);
+        String topicPartitionsPath = BROKER_TOPICS_PATH + "/" + topic + "/" + PARTITIONS;
+        //获取/brokers/topics/xx(topic)/partitions的子目录
+        List<String> partitions = getChildrenParentMayNotExist(topicPartitionsPath);
         for (String partition : partitions) {
-            String data = client.readData(BROKER_TOPICS_PATH + "/" + topic + "/" + PARTITIONS + "/" + partition + "/state");
-            Map<String, Object> map = parseJsonAsMap(data);
-
-            if (map.containsKey("leader")) {
-                partitionLeaders.put(
-                    Integer.valueOf(partition),
-                    Integer.valueOf(map.get("leader").toString())
-                );
-            }
+            String data = client.readData(topicPartitionsPath + "/" + partition + "/state");
+            //解析zk中获取的json信息
+            Map<String, Object> map = jacksonParseUtils.parseJsonAsMap(data);
+            if (map.containsKey("leader"))
+                partitionLeaders.put(Integer.valueOf(partition), Integer.valueOf(map.get("leader").toString()));
         }
         return partitionLeaders;
     }
 
-    private String getOffsetsPath(String group, String topic, int partition) {
-        return CONSUMERS_PATH + "/" + group + "/offsets/" + topic + "/" + partition;
-    }
 
+    /**
+     * @param group     所属组
+     * @param topic     topic
+     * @param partition partition值
+     * @return 返回消费者最后的偏移量
+     */
     long getLastConsumedOffset(String group, String topic, int partition) {
+        //获取offset路径znode
         String znode = getOffsetsPath(group, topic, partition);
+        //获取znode中内容offset
         String offset = client.readData(znode, true);
         if (offset == null) {
             return -1L;
@@ -97,14 +109,19 @@ public class KafkaZkUtils implements Closeable {
         return Long.valueOf(offset);
     }
 
-    void commitLastConsumedOffset(
-        String group,
-        String topic,
-        int partition,
-        long offset
-    ) {
-        String path = getOffsetsPath(group, topic, partition);
+    /**
+     * @return 拼接zk中存取偏移量的path
+     */
+    private String getOffsetsPath(String group, String topic, int partition) {
+        return CONSUMERS_PATH + "/" + group + "/offsets/" + topic + "/" + partition;
+    }
 
+    /**
+     * @param offset 偏移量
+     *               提交消费后的最后offset
+     */
+    void commitLastConsumedOffset(String group, String topic, int partition, long offset) {
+        String path = getOffsetsPath(group, topic, partition);
         log.info("OFFSET COMMIT " + path + " = " + offset);
         if (!client.exists(path)) {
             client.createPersistent(path, true);
@@ -113,6 +130,10 @@ public class KafkaZkUtils implements Closeable {
         client.writeData(path, offset);
     }
 
+    /**
+     * @param path 指定路径
+     * @return 返回子目录的集合
+     */
     private List<String> getChildrenParentMayNotExist(String path) {
         try {
             return client.getChildren(path);
@@ -121,6 +142,7 @@ public class KafkaZkUtils implements Closeable {
         }
     }
 
+    @Override
     public void close() throws java.io.IOException {
         if (client != null) {
             client.close();
@@ -141,13 +163,4 @@ public class KafkaZkUtils implements Closeable {
     }
 
 
-    private Map<String, Object> parseJsonAsMap(String data) {
-        TypeReference<HashMap<String, Object>> typeRef = new TypeReference<HashMap<String, Object>>() {};
-
-        try {
-            return jsonMapper.readValue(data, typeRef);
-        } catch (IOException e) {
-            return new HashMap<>();
-        }
-    }
 }

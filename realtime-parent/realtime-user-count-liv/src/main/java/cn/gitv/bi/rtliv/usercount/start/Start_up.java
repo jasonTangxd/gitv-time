@@ -1,9 +1,6 @@
 package cn.gitv.bi.rtliv.usercount.start;
 
-import cn.gitv.bi.rtliv.usercount.bolts.AnRecord;
-import cn.gitv.bi.rtliv.usercount.bolts.FilterAll;
-import cn.gitv.bi.rtliv.usercount.bolts.Mac2Redis;
-import cn.gitv.bi.rtliv.usercount.bolts.UserCount;
+import cn.gitv.bi.rtliv.usercount.bolts.*;
 import cn.gitv.bi.rtliv.usercount.constant.Constant;
 import cn.gitv.bi.rtliv.usercount.constant.Properties;
 import kafka.api.OffsetRequest;
@@ -38,7 +35,7 @@ public class Start_up {
         builder.setSpout("real_time_spout", new KafkaSpout(spoutConfig), 3);
         //
         builder.setBolt("filter_bolt", new FilterAll(), 3).shuffleGrouping("real_time_spout");
-        builder.setBolt("mac_redis_bolt", new Mac2Redis(), 3).fieldsGrouping("filter_bolt", new Fields("mac"));
+        builder.setBolt("mac_redis_bolt", new Mac2Redis(), 4).fieldsGrouping("filter_bolt", new Fields("mac"));
         builder.setBolt("user_count_bolt", new UserCount(jConf4Count), 3).fieldsGrouping("mac_redis_bolt", Constant.USER_COUNT, new Fields("ADD", "DEC"));
         builder.setBolt("an_record_bolt", new AnRecord(jConf4An), 3).fieldsGrouping("mac_redis_bolt", Constant.AN_RECORD, new Fields("NEW", "OLD"));
         Config conf = new Config();

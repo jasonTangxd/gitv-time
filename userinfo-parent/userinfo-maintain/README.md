@@ -52,6 +52,14 @@ CREATE TABLE userinfo.nopartner_province (
     partner text PRIMARY KEY
 );
 ```
+```
+create table userinfo.not_found_from_mysql(
+partner text,
+mac text,
+ts text,
+PRIMARY KEY (partner,mac)
+);
+```
 
 ## zk中维护的信息
 ``partnerToProvince``

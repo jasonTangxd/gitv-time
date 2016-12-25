@@ -113,7 +113,7 @@ public class UserCount extends AbstractRedisBolt {
     @Override
     public Map<String, Object> getComponentConfiguration() {
         Map<String, Object> conf = new HashMap<String, Object>();
-        conf.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, 1);//每60s持久化一次数据
+        conf.put(Config.TOPOLOGY_TICK_TUPLE_FREQ_SECS, 1);//每1s持久化一次数据
         return conf;
     }
 

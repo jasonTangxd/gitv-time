@@ -25,7 +25,7 @@ public class Start_up {
     // private static Logger log = LoggerFactory.getLogger(Start_up.class);
     private static Session session = CassandraConnection.getSession();
     private static Channel channel = RabbitConnection.getChannel();
-    private static ExecutorService executorService = Executors.newFixedThreadPool(5);
+    private static ExecutorService executorService = Executors.newFixedThreadPool(3);
 
     public static void main(String[] args) throws Exception {
         //根据可操作partnerList启动定时器
@@ -36,6 +36,7 @@ public class Start_up {
             new Timer().scheduleAtFixedRate(new TimeConditionTask(routingKey, channel, syncQueue), DELAY_TIME, PERIOD_TIME);
             //启动数量维度的定时器
             new Timer().scheduleAtFixedRate(new NumConditionTask(routingKey, channel, syncQueue), 0, 1000);
+            //启动queue数据消费线程
             executorService.submit(new QueueConsumer(routingKey, session, syncQueue));
         }
 

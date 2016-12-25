@@ -33,7 +33,7 @@ public class Start_up {
         builder.setSpout("real_time_spout", new KafkaSpout(spoutConfig), 3);
         //
         builder.setBolt("filter_bolt", new FilterAll(), 3).shuffleGrouping("real_time_spout");
-        builder.setBolt("mac_redis_bolt", new Mac2Redis(), 8).fieldsGrouping("filter_bolt", new Fields("mac"));
+        builder.setBolt("mac_redis_bolt", new Mac2Redis(),16).fieldsGrouping("filter_bolt", new Fields("mac"));
         builder.setBolt("user_count_bolt", new UserCount(jConf4Count), 3).fieldsGrouping("mac_redis_bolt", new Fields("ADD", "DEC"));
         Config conf = new Config();
         conf.setMaxSpoutPending(2000);

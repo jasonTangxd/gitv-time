@@ -62,32 +62,40 @@ public class KafkaInputFormat extends InputFormat<MsgMetadataWritable, BytesWrit
         conf.set(CONFIG_KAFKA_AUTOOFFSET_RESET, optionValue);
     }
 
-    /*这个由客户端调用来获得当前Job的所有分片*/
+    /**
+     * 这个由客户端调用来获得当前Job的所有分片
+     *
+     * @return 返回切片的集合
+     */
     @Override
     public List<InputSplit> getSplits(JobContext context) throws IOException, InterruptedException {
         Configuration conf = context.getConfiguration();
-        try (KafkaZkUtils zkUtils = new KafkaZkUtils(conf.get(KafkaInputFormat.CONFIG_ZK_CONNECT), conf.getInt(KafkaInputFormat.CONFIG_ZK_SESSION_TIMEOUT_MS, 10000), conf.getInt(KafkaInputFormat.CONFIG_ZK_CONNECT_TIMEOUT_MS, 10000)
-        )) {
+        //1.7新特性 自动释放资源
+        try (
+                KafkaZkUtils zkUtils = new KafkaZkUtils(conf.get(KafkaInputFormat.CONFIG_ZK_CONNECT),
+                        conf.getInt(KafkaInputFormat.CONFIG_ZK_SESSION_TIMEOUT_MS, 10000),
+                        conf.getInt(KafkaInputFormat.CONFIG_ZK_CONNECT_TIMEOUT_MS, 10000))
+        ) {
             return createSplitsForPartitionLeader(conf, zkUtils);
         }
 
     }
 
-    private List<InputSplit> createSplitsForPartitionLeader(Configuration conf, KafkaZkUtils zk) throws IOException {
+    private List<InputSplit> createSplitsForPartitionLeader(Configuration conf, KafkaZkUtils zkUtils) throws IOException {
         String[] inputTopics = conf.get(CONFIG_KAFKA_TOPIC_LIST).split(",");
 
-        CheckpointManager checkpoints = new CheckpointManager(conf, zk);
+        CheckpointManager checkpoints = new CheckpointManager(conf, zkUtils);
         /*InputSplit的list*/
         List<InputSplit> splits = new ArrayList<>();
         for (String topic : inputTopics) {
-            Map<Integer, Integer> partitionLeaders = zk.getPartitionLeaders(topic);
+            Map<Integer, Integer> partitionLeaders = zkUtils.getPartitionLeaders(topic);
             for (int partition : partitionLeaders.keySet()) {
 
                 int brokerId = partitionLeaders.get(partition);
 
                 KafkaInputSplit split = new KafkaInputSplit(
                         brokerId,
-                        zk.getBrokerName(brokerId),
+                        zkUtils.getBrokerName(brokerId),
                         topic,
                         partition,
                         checkpoints.getNextOffsetToConsume(topic, partition)

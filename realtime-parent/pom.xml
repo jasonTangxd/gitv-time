@@ -13,6 +13,7 @@
     <modules>
         <module>realtime-user-count-liv</module>
         <module>realtime-user-count-vod</module>
+        <module>realtime-ttl-trigger</module>
     </modules>
     <packaging>pom</packaging>
     <dependencies>
