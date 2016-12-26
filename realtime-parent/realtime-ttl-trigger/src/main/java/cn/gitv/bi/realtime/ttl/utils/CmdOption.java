@@ -7,6 +7,11 @@ import org.apache.commons.cli.Options;
  * Created by Kang on 2016/12/20.
  */
 public class CmdOption {
+    /**
+     * 根据自己的需要init Options
+     *
+     * @return Options with -t -p -i -h
+     */
     public static Options buildOptions() {
         Options options = new Options();
         options.addOption(OptionBuilder.withArgName("type").withLongOpt("type").hasArg().withDescription("liv or vod").create("t"));

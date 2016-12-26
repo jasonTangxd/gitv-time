@@ -48,6 +48,20 @@ public class Mac2Redis implements IRichBolt {
         }
     }
 
+
+    /**
+     * 对pt=0、1、2、5进行分别处理
+     * when 0:jedis.get(macCopy)==null?
+     * y:set(mac, "0")、expire(mac, Constant.TIME_TTL)、set(macCopy, channelPartner)、ADD
+     * n:set(mac, "0")、expire(mac, Constant.TIME_TTL)、set(macCopy, channelPartner)、ADD NOW、DES OLD
+     * <p>
+     * when 1、2:jedis.get(macCopy)==null?
+     * y:return
+     * n:del(macCopy)、del(mac)、DES OLD
+     * when 5:jedis.get(macCopy)==null?
+     * y:like 0/n
+     * n:expire(mac, Constant.TIME_TTL);
+     */
     private void checkMacAndHandle(Jedis jedis, Tuple input) {
         String partner = input.getStringByField("partner");
         String mac = input.getStringByField("mac");
@@ -96,6 +110,7 @@ public class Mac2Redis implements IRichBolt {
                         log.warn("transaction is disturbed,and mac is {}", mac);
                         return;
                     }
+                    //事务执行成功,以下信息发往下游
                     String ADD = StringHandle.str_join(channelCode, partner);
                     collector.emit(Constant.USER_COUNT, input, new Values(ADD, null));
                     //

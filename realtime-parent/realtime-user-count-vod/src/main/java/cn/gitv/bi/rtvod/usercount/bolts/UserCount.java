@@ -13,6 +13,7 @@ import org.apache.storm.tuple.Tuple;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import redis.clients.jedis.JedisCommands;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -53,6 +54,10 @@ public class UserCount extends AbstractRedisBolt {
         }
     }
 
+    /**
+     * @param jedisCommands jedisBolt提供的类似jedis的redis客户端
+     *                      对内存中map进行total、partner的计数加减操作
+     */
     private void mainTain(JedisCommands jedisCommands, Tuple input) {
         String ADD = input.getStringByField("ADD");
         String DEC = input.getStringByField("DEC");
@@ -80,6 +85,10 @@ public class UserCount extends AbstractRedisBolt {
         }
     }
 
+    /**
+     * @param key 存入map中的mac key
+     *            递增操作的缓存map
+     */
     private void CacheInMapAdd(String key) {
         if (cacheMap.containsKey(key)) {
             cacheMap.put(key, cacheMap.get(key) + 1);
@@ -88,6 +97,10 @@ public class UserCount extends AbstractRedisBolt {
         }
     }
 
+    /**
+     * @param key 存入map中的mac key
+     *            递减操作的缓存map
+     */
     private void CacheInMapDec(String key) {
         if (cacheMap.containsKey(key)) {
             cacheMap.put(key, cacheMap.get(key) - 1);
@@ -96,6 +109,9 @@ public class UserCount extends AbstractRedisBolt {
         }
     }
 
+    /**
+     * 每一秒对内存map进行一次存入redis操作,操作结束后需要清空map
+     */
     private void SecondsToRedis(JedisCommands jedis) {
         if (cacheMap.size() == 0) {
             return;
@@ -117,6 +133,9 @@ public class UserCount extends AbstractRedisBolt {
         return conf;
     }
 
+    /**
+     * 是否是系统消息
+     */
     public static boolean isTickTuple(Tuple tuple) {
         return tuple.getSourceComponent().equals(Constants.SYSTEM_COMPONENT_ID) && tuple.getSourceStreamId().equals(
                 Constants.SYSTEM_TICK_STREAM_ID);

@@ -20,9 +20,6 @@ import java.util.List;
 import java.util.Map;
 
 public class FilterAll implements IRichBolt {
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
     private OutputCollector collector = null;
     private Logger log = LoggerFactory.getLogger(FilterAll.class);
@@ -34,6 +31,11 @@ public class FilterAll implements IRichBolt {
         this.collector = collector;
     }
 
+    /**
+     * 1.区分点播和直播
+     * 2.区分v1和v2
+     * 获取partner, mac, an, pt, vt, channelCode
+     */
     @Override
     public void execute(Tuple input) {
         try {
@@ -48,6 +50,7 @@ public class FilterAll implements IRichBolt {
                 String pt = null;
                 String vt = null;
                 String channelCode = null;
+                //只选择直播的数据
                 if (LIVOD.equals(type)) {
                     PingbackVersion pingbackVersion = PingbackContainer.getPingbackVersion(pingbackVersionStr);
                     switch (pingbackVersion) {

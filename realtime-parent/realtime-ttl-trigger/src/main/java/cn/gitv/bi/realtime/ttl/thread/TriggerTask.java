@@ -32,6 +32,7 @@ public class TriggerTask implements Runnable {
             macJedis = jedisPool.getResource();
             log.info("get ttl is {}", mac);
             String macCopy = mac + "|cp";
+            //redis乐观锁开启->事务
             macJedis.watch(mac, macCopy);
             String channelPartner = macJedis.get(macCopy);
             Transaction multi = macJedis.multi();

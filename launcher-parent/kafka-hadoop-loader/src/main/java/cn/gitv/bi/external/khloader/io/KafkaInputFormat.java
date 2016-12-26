@@ -71,16 +71,15 @@ public class KafkaInputFormat extends InputFormat<MsgMetadataWritable, BytesWrit
     public List<InputSplit> getSplits(JobContext context) throws IOException, InterruptedException {
         Configuration conf = context.getConfiguration();
         //1.7新特性 自动释放资源
-        try (
-                KafkaZkUtils zkUtils = new KafkaZkUtils(conf.get(KafkaInputFormat.CONFIG_ZK_CONNECT),
-                        conf.getInt(KafkaInputFormat.CONFIG_ZK_SESSION_TIMEOUT_MS, 10000),
-                        conf.getInt(KafkaInputFormat.CONFIG_ZK_CONNECT_TIMEOUT_MS, 10000))
-        ) {
+        try (KafkaZkUtils zkUtils = new KafkaZkUtils(conf.get(KafkaInputFormat.CONFIG_ZK_CONNECT), conf.getInt(KafkaInputFormat.CONFIG_ZK_SESSION_TIMEOUT_MS, 10000), conf.getInt(KafkaInputFormat.CONFIG_ZK_CONNECT_TIMEOUT_MS, 10000))) {
             return createSplitsForPartitionLeader(conf, zkUtils);
         }
 
     }
 
+    /**
+     *
+     * */
     private List<InputSplit> createSplitsForPartitionLeader(Configuration conf, KafkaZkUtils zkUtils) throws IOException {
         String[] inputTopics = conf.get(CONFIG_KAFKA_TOPIC_LIST).split(",");
 

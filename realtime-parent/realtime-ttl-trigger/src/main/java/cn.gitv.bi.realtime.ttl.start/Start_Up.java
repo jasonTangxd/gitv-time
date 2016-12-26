@@ -34,7 +34,7 @@ public class Start_Up {
         } else {
             printHelpAndExit(options);
         }
-        //init and check type
+        //init by type and check type
         switch (type) {
             case "liv":
                 compJedisPool = new JedisPool("10.10.121.120", 55556);
@@ -52,6 +52,10 @@ public class Start_Up {
         //System.out.println("host:" + host + "\t" + "type:" + type + "\t" + "port:" + port);
     }
 
+    /**
+     * @param options CmdOption.buildOptions()之后返回的配置完后的opt
+     *                友好的在终端提示help信息
+     */
     private static void printHelpAndExit(Options options) {
         HelpFormatter formatter = new HelpFormatter();
         formatter.printHelp("real-time-ttl.jar", options);
@@ -70,6 +74,10 @@ class MyJedisPubSub extends JedisPubSub {
         this.executorService = executorService;
     }
 
+    /**
+     * @param message 订阅的频道返回的具体信息
+     *                订阅"__keyevent@0__:expired"以后，每次收到消息调用的函数
+     */
     @Override
     public void onPMessage(String pattern, String channel, String message) {
         executorService.submit(new TriggerTask(compJedisPool, jedisPool, message));

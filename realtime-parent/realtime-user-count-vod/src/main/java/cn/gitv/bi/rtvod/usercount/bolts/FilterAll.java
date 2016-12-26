@@ -19,10 +19,10 @@ import org.slf4j.LoggerFactory;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author likang
+ */
 public class FilterAll implements IRichBolt {
-    /**
-     *
-     */
     private static final long serialVersionUID = 1L;
     private OutputCollector collector = null;
     private Logger log = LoggerFactory.getLogger(FilterAll.class);
@@ -35,6 +35,10 @@ public class FilterAll implements IRichBolt {
         this.collector = collector;
     }
 
+    /**
+     * 筛选点播数据,接受1.0、2.0的数据
+     * 下游接受(partner, mac, pt, channelName)
+     */
     @Override
     public void execute(Tuple input) {
         try {
