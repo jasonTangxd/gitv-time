@@ -17,7 +17,7 @@
         <module>hadoop-rpc-demo</module>
         <module>motan-netty-demo</module>
         <module>netty-rpc-demo</module>
-        <module>example</module>
+        <module>hadoop-example</module>
     </modules>
 
 

@@ -72,9 +72,9 @@ public class KafkaZkUtils implements Closeable {
     }
 
     /**
-     * @param topic
-     * @return 分区-分区leader
      * Map of PartitionId : BrokerId where by BrokerId is the leader
+     * @param topic kafka topic
+     * @return 分区 对 分区leader
      */
     public Map<Integer, Integer> getPartitionLeaders(String topic) {
         Map<Integer, Integer> partitionLeaders = new HashMap<>();
@@ -83,6 +83,7 @@ public class KafkaZkUtils implements Closeable {
         List<String> partitions = getChildrenParentMayNotExist(topicPartitionsPath);
         for (String partition : partitions) {
             String data = client.readData(topicPartitionsPath + "/" + partition + "/state");
+            System.out.println(data);
             //解析zk中获取的json信息
             Map<String, Object> map = jacksonParseUtils.parseJsonAsMap(data);
             if (map.containsKey("leader"))

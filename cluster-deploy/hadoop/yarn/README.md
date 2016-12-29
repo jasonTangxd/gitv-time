@@ -2,6 +2,7 @@
 ``图例``
 
 ![](http://p1.bpimg.com/567571/596d1a9786e0b92f.png)
+
 步骤1:
 ```
 用户向YARN中提交应用程序，其中包括ApplicationMaster程序、启动ApplicationMaster的命令、用户程序等

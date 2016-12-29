@@ -14,6 +14,11 @@ public class StringHandle {
         return sb.append(str1).append("|").append(str2).toString();
     }
 
+    public static String fullPaht(String basePath, String fileName) {
+        StringBuilder sb = new StringBuilder();
+        return sb.append(basePath).append("/").append(fileName).toString();
+    }
+
     public static String str_join(String... strs) {
         StringBuilder sb = new StringBuilder();
         for (String item : strs) {

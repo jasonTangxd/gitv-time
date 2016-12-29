@@ -1,20 +1,18 @@
 package cn.gitv.bi.external.khloader.start;
 
-import cn.gitv.bi.external.khloader.io.KafkaInputFormat;
-import cn.gitv.bi.external.khloader.io.MultiOutputFormat;
+import cn.gitv.bi.external.khloader.custom.MyMapper;
+import cn.gitv.bi.external.khloader.overwrite.KafkaInputFormat;
+import cn.gitv.bi.external.khloader.overwrite.MultiOutputFormat;
 import cn.gitv.bi.external.khloader.utils.CheckpointManager;
 import cn.gitv.bi.external.khloader.utils.CmdOption;
 import org.apache.commons.cli.*;
 import org.apache.hadoop.conf.Configuration;
-import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import java.net.URI;
 
 public class StartJob {
     private final static Logger LOG = LoggerFactory.getLogger(StartJob.class);
@@ -43,34 +41,21 @@ public class StartJob {
         if (cmd.getOptionValue("autooffset-reset") != null) {
             KafkaInputFormat.configureAutoOffsetReset(conf, cmd.getOptionValue("autooffset-reset"));
         }
-        /*如果结果路径已经存在则删除*/
-//        deleteOldPath(output, conf);
         Job job = Job.getInstance(conf, "kafka.hadoop.loader");
         job.setJarByClass(StartJob.class);
-        /*设置Map和Reduce处理类*/
         job.setInputFormatClass(KafkaInputFormat.class);
-        job.setMapperClass(HadoopJobMapper.class);
+        job.setMapperClass(MyMapper.class);
         job.setOutputKeyClass(NullWritable.class);
         job.setOutputValueClass(Text.class);
         job.setOutputFormatClass(MultiOutputFormat.class);
         job.setNumReduceTasks(0);
         MultiOutputFormat.setOutputPath(job, new Path(hdfsPath));
-        MultiOutputFormat.configurePathFormat(conf, "'topic={T}/d='yyyy-MM-dd'/h='HH'/{P}'");
+        MultiOutputFormat.configurePathFormat(conf, "'{T}/'yyyy-MM-dd'/'");
         MultiOutputFormat.setCompressOutput(job, cmd.getOptionValue("compress-output", "on").equals("on"));
         LOG.info("Output hdfs location: {}", hdfsPath);
 //        LOG.info("Output hdfs compression: {}", MultiOutputFormat.getCompressOutput(job));
         job.submit();
 //        System.exit(job.waitForCompletion(true) ? 0 : -1);
-    }
-
-
-    /*删除已有输出路径*/
-    private static void deleteOldPath(String path, Configuration conf) throws Exception {
-        final FileSystem fileSystem = FileSystem.get(new URI(path), conf);
-        final Path outPath = new Path(path);
-        if (fileSystem.exists(outPath)) {
-            fileSystem.delete(outPath, true);
-        }
     }
 
     private static void printHelpAndExit(Options options) {

@@ -15,5 +15,3 @@ ssh 10.10.121.138 "/data/opt/soft/hadoop-2.7.3/sbin/mr-jobhistory-daemon.sh star
 
 
 
-
-
