@@ -14,7 +14,7 @@
     <version>1.0.0</version>
 
     <dependencies>
-        <!--******** logback and slf4j start ******** -->
+        <!--******** logback and slf4j cn.bi.gitv.hip.parquetdemo.start ******** -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>

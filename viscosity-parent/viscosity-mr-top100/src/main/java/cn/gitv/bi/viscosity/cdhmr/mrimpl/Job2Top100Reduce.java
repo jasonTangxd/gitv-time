@@ -63,7 +63,7 @@ public class Job2Top100Reduce extends Reducer<Text, Text, NullWritable, Text> {
             int timeLength = item.getTimeLength();
             String value = StringHandle.str_join(partnerChannel, album, albumId, String.valueOf(playLength), String.valueOf(timeLength));
             mValue.set(value);
-            mu.write(NullWritable.get(), mValue, "pl");
+            mu.write(NullWritable.get(), mValue, "pl" + "/pl");
         }
         //迭代输出zb-list
         for (Album_ZB item : top100ZbList) {
@@ -73,7 +73,7 @@ public class Job2Top100Reduce extends Reducer<Text, Text, NullWritable, Text> {
             int timeLength = item.getTimeLength();
             String value = StringHandle.str_join(partnerChannel, album, albumId, df.format(zb), String.valueOf(timeLength));
             mValue.set(value);
-            mu.write(NullWritable.get(), mValue, "zb");
+            mu.write(NullWritable.get(), mValue, "zb" + "/zb");
         }
     }
 

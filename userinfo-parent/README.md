@@ -45,8 +45,6 @@ CREATE TABLE userinfo.user_info (
 
 * storm中的处理逻辑
 
-收集log-clean-10的升级信息
-
 ![](http://p1.bpimg.com/567571/17169ba1329b2bee.png)
 
 #### 2.uif_consumer_mysql

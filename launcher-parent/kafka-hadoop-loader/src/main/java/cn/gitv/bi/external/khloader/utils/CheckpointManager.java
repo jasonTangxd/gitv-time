@@ -40,7 +40,7 @@ public class CheckpointManager {
             Path comittedCheckpoint = new Path(hdfsCheckpointDir, topic + "-" + partition);
             if (fs.exists(comittedCheckpoint)) {
                 try (FSDataInputStream in = fs.open(comittedCheckpoint)) {
-                    in.readLong();// prev start offset
+                    in.readLong();// prev cn.bi.gitv.hip.parquetdemo.start offset
                     nextOffsetToConsume = in.readLong() + 1;
                 }
             }

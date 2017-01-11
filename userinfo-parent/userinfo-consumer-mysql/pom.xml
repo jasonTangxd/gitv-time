@@ -36,7 +36,7 @@
             <version>3.4</version>
         </dependency>
 
-        <!--******** logback and slf4j start ******** -->
+        <!--******** logback and slf4j cn.bi.gitv.hip.parquetdemo.start ******** -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-core</artifactId>

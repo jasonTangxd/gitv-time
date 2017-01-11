@@ -142,7 +142,7 @@ public class ApkBean {
                 .append(LOGBEAN_SEPARATOR).append(topicPicBg).append(LOGBEAN_SEPARATOR).append(chnName).append(LOGBEAN_SEPARATOR).append(currTypingCode).append(LOGBEAN_SEPARATOR)
                 .append(currTypingName).append(LOGBEAN_SEPARATOR).append(typings).append(LOGBEAN_SEPARATOR).append(num).append(LOGBEAN_SEPARATOR).append(tvId)
                 .append(LOGBEAN_SEPARATOR).append(tagId).append(LOGBEAN_SEPARATOR).append(pageName).append(LOGBEAN_SEPARATOR).append(screenInfo).append(LOGBEAN_SEPARATOR).
-                append(picUrl).append(LOGBEAN_SEPARATOR);
+                append(picUrl);
         return sb.toString();
     }
 

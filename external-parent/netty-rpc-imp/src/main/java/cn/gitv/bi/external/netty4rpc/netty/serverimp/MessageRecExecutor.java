@@ -134,10 +134,10 @@ public class MessageRecExecutor implements ApplicationContextAware {
                 String host = ipAddress[0];
                 int port = Integer.parseInt(ipAddress[1]);
                 ChannelFuture future = bootstrap.bind(host, port).sync();
-                LOG.info("Netty RPC Server start success!\nip:{}\nport:{}\nprotocol:{}\n\n", host, port, serializeProtocol);
+                LOG.info("Netty RPC Server cn.bi.gitv.hip.parquetdemo.start success!\nip:{}\nport:{}\nprotocol:{}\n\n", host, port, serializeProtocol);
                 future.channel().closeFuture().sync();
             } else {
-                LOG.info("Netty RPC Server start fail!\n");
+                LOG.info("Netty RPC Server cn.bi.gitv.hip.parquetdemo.start fail!\n");
             }
         } catch (InterruptedException e) {
             e.printStackTrace();

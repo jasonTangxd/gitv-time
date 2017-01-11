@@ -15,5 +15,6 @@
     <modules>
         <module>storm-hdfs-plus</module>
         <module>netty-rpc-imp</module>
+        <module>bi-common-mail-api</module>
     </modules>
 </project>

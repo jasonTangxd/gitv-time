@@ -31,7 +31,7 @@ drop table if exists vod_zb_top100_${delete_day};
 drop table if exists liv_pl_top100_${delete_day};
 drop table if exists liv_zb_top100_${delete_day};
 "
-sqoop export -connect "jdbc:mysql://10.10.121.150/viscosity?useUnicode=true&characterEncoding=utf-8" -username root -password 123456 -table vod_pl_top100_${excute_day} -export-dir /viscosity/pl_zb_top100/${today}/vod/pl-r-00000 --input-fields-terminated-by '|'
-sqoop export -connect "jdbc:mysql://10.10.121.150/viscosity?useUnicode=true&characterEncoding=utf-8" -username root -password 123456 -table vod_zb_top100_${excute_day} -export-dir /viscosity/pl_zb_top100/${today}/vod/zb-r-00000 --input-fields-terminated-by '|'
-sqoop export -connect "jdbc:mysql://10.10.121.150/viscosity?useUnicode=true&characterEncoding=utf-8" -username root -password 123456 -table liv_pl_top100_${excute_day} -export-dir /viscosity/pl_zb_top100/${today}/liv/pl-r-00000 --input-fields-terminated-by '|'
-sqoop export -connect "jdbc:mysql://10.10.121.150/viscosity?useUnicode=true&characterEncoding=utf-8" -username root -password 123456 -table liv_zb_top100_${excute_day} -export-dir /viscosity/pl_zb_top100/${today}/liv/zb-r-00000 --input-fields-terminated-by '|'
+sqoop export -connect "jdbc:mysql://10.10.121.150/viscosity?useUnicode=true&characterEncoding=utf-8" -username root -password 123456 -table vod_pl_top100_${excute_day} -export-dir /viscosity/pl_zb_top100/${today}/vod/pl/pl-r-00000 --input-fields-terminated-by '|'
+sqoop export -connect "jdbc:mysql://10.10.121.150/viscosity?useUnicode=true&characterEncoding=utf-8" -username root -password 123456 -table vod_zb_top100_${excute_day} -export-dir /viscosity/pl_zb_top100/${today}/vod/zb/zb-r-00000 --input-fields-terminated-by '|'
+sqoop export -connect "jdbc:mysql://10.10.121.150/viscosity?useUnicode=true&characterEncoding=utf-8" -username root -password 123456 -table liv_pl_top100_${excute_day} -export-dir /viscosity/pl_zb_top100/${today}/liv/pl/pl-r-00000 --input-fields-terminated-by '|'
+sqoop export -connect "jdbc:mysql://10.10.121.150/viscosity?useUnicode=true&characterEncoding=utf-8" -username root -password 123456 -table liv_zb_top100_${excute_day} -export-dir /viscosity/pl_zb_top100/${today}/liv/zb/zb-r-00000 --input-fields-terminated-by '|'

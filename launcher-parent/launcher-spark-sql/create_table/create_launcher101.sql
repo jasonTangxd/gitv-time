@@ -18,3 +18,9 @@ PARTITIONED BY(yymmdd String)
 ROW FORMAT DELIMITED
 FIELDS TERMINATED BY '|'
 STORED AS TEXTFILE;
+
+ALTER TABLE launcher_log_101 ADD IF NOT EXISTS PARTITION(yymmdd='2016-12-24') location '/launcher/launcher-log-101/2016-12-24';
+ALTER TABLE launcher_log_101 ADD IF NOT EXISTS PARTITION(yymmdd='2016-12-25') location '/launcher/launcher-log-101/2016-12-25';
+ALTER TABLE launcher_log_101 ADD IF NOT EXISTS PARTITION(yymmdd='2016-12-26') location '/launcher/launcher-log-101/2016-12-26';
+ALTER TABLE launcher_log_101 ADD IF NOT EXISTS PARTITION(yymmdd='2016-12-27') location '/launcher/launcher-log-101/2016-12-27';
+ALTER TABLE launcher_log_101 ADD IF NOT EXISTS PARTITION(yymmdd='2016-12-28') location '/launcher/launcher-log-101/2016-12-28';

@@ -32,7 +32,7 @@ public class Start_up {
         BrokerHosts brokerHosts = new ZkHosts(MyProperties.ZK_HOST_PORT);
         SpoutConfig spoutConfig = new SpoutConfig(brokerHosts, MyProperties.CONSUMER_TOPIC, "/storm", MyProperties.SPOUT_INZK);
         spoutConfig.scheme = new SchemeAsMultiScheme(new NginxScheme());
-        spoutConfig.startOffsetTime = OffsetRequest.LatestTime();// 表示从kafka最新接手的数据开始
+//        spoutConfig.startOffsetTime = OffsetRequest.LatestTime();// 表示从kafka最新接手的数据开始
         return spoutConfig;
     }
 

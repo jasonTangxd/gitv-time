@@ -15,7 +15,7 @@
         <module>viscosity-parent</module>
         <module>userinfo-parent</module>
         <module>external-parent</module>
-        <module>dailyjob-parent</module>
+        <module>hadoop-improve-parent</module>
     </modules>
 
     <!--properties-->
@@ -136,7 +136,7 @@
                 <version>2.6.4</version>
                 <!-- <scope>provided</scope> -->
             </dependency>
-            <!--******** logback and slf4j start ******** -->
+            <!--******** logback and slf4j cn.bi.gitv.hip.parquetdemo.start ******** -->
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-core</artifactId>

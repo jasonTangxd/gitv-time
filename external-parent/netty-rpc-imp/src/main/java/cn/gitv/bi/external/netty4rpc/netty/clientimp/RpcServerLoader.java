@@ -50,7 +50,7 @@ public class RpcServerLoader {
             int port = Integer.parseInt(ipAddress[1]);
             final InetSocketAddress remoteAddress = new InetSocketAddress(host, port);
             ListenableFuture<Boolean> listenableFuture = listeningExecutorService.submit(new MessageSendInitializeTask(eventLoopGroup, remoteAddress, serializeProtocol));
-            LOG.info("Netty RPC Client start success!\nip:{}\nport:{}\nprotocol:{}\n\n", host, port, serializeProtocol);
+            LOG.info("Netty RPC Client cn.bi.gitv.hip.parquetdemo.start success!\nip:{}\nport:{}\nprotocol:{}\n\n", host, port, serializeProtocol);
 
             Futures.addCallback(listenableFuture, new FutureCallback<Boolean>() {
                 public void onSuccess(Boolean result) {

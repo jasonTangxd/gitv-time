@@ -48,7 +48,7 @@ public class URLDecode_Bolt implements IRichBolt {
                 MultiMap<String> multiMap = new MultiMap<>();
                 //url_analyze -> [MultiMap]
                 UrlEncoded.decodeTo(url_analyze, multiMap, "utf-8", 1000);
-                String Action = multiMap.getValue("A", 0);
+                String Action = multiMap.getValue("A",0);
                 if (StringUtils.isBlank(Action)) {
                     //如果action是空,后续操作结束
                     collector.ack(input);

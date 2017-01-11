@@ -1,4 +1,5 @@
 package cn.gitv.bi.viscosity.tvplay.start;
+
 import cn.gitv.bi.viscosity.tvplay.bolts.*;
 import cn.gitv.bi.viscosity.tvplay.constant.Constant;
 import cn.gitv.bi.viscosity.tvplay.constant.Properties;
@@ -31,9 +32,11 @@ public class Start_up {
         //
         builder.setBolt("vod_distribute", new VOD_Distribute_Bolt(), 3).shuffleGrouping("top_filter", Constant.VOD_DIS);
         builder.setBolt("nosrcName", new NoSrcName_Bolt(), 1).shuffleGrouping("vod_distribute", Constant.NOSRCNAME).shuffleGrouping("liv_distribute", Constant.NOSRCNAME);
+        //
         builder.setBolt("vod_user_viscosity", new VOD_UserViscosity_Bolt(), 3).shuffleGrouping("vod_distribute", Constant.VOD_TO_USER);
         builder.setBolt("vod_to_user_insert", new VOD_ToUser_Insert_Bolt(), 3).shuffleGrouping("vod_user_viscosity", Constant.VOD_TO_USER_INSERT);
         builder.setBolt("vod_to_user_update", new VOD_ToUser_Update_Bolt(), 3).shuffleGrouping("vod_user_viscosity", Constant.VOD_TO_USER_UPDATE);
+        //
         builder.setBolt("vod_program_viscosity", new VOD_ProgramViscosity_Bolt(), 3).shuffleGrouping("vod_distribute", Constant.VOD_TO_PROGRAM);
         builder.setBolt("vod_to_program_insert", new VOD_ToProgram_Insert_Bolt(), 3).shuffleGrouping("vod_program_viscosity", Constant.VOD_TO_PROGRAM_INSERT);
         builder.setBolt("vod_to_program_update", new VOD_ToProgram_Update_Bolt(), 3).shuffleGrouping("vod_program_viscosity", Constant.VOD_TO_PROGRAM_UPDATE);
@@ -42,6 +45,7 @@ public class Start_up {
         builder.setBolt("liv_user_viscosity", new LIV_UserViscosity_Bolt(), 3).shuffleGrouping("liv_distribute", Constant.LIV_TO_USER);
         builder.setBolt("liv_to_user_insert", new LIV_ToUser_Insert_Bolt(), 3).shuffleGrouping("liv_user_viscosity", Constant.LIV_TO_USER_INSERT);
         builder.setBolt("liv_to_user_update", new LIV_ToUser_Update_Bolt(), 3).shuffleGrouping("liv_user_viscosity", Constant.LIV_TO_USER_UPDATE);
+        //
         builder.setBolt("liv_program_viscosity", new LIV_ProgramViscosity_Bolt(), 3).shuffleGrouping("liv_distribute", Constant.LIV_TO_PROGRAM);
         builder.setBolt("liv_to_program_insert", new LIV_ToProgram_Insert_Bolt(), 3).shuffleGrouping("liv_program_viscosity", Constant.LIV_TO_PROGRAM_INSERT);
         builder.setBolt("liv_to_program_update", new LIV_ToProgram_Update_Bolt(), 3).shuffleGrouping("liv_program_viscosity", Constant.LIV_TO_PROGRAM_UPDATE);

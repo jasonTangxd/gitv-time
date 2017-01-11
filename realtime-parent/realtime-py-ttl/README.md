@@ -6,7 +6,7 @@
 * ``clean_vod.sh``
 分别用来清空redis直播、点播缓存的所有数据(mac full + count num)
 
-* ``start.sh``
+* ``cn.bi.gitv.hip.parquetdemo.start.sh``
 在一台机器上启动多个ttl进程，每个进程监听hash分的一台redis机器上的ttl触发消息
 
 * ``ttl.py.bk``

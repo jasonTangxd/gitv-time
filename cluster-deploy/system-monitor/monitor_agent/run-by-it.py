@@ -4,7 +4,7 @@ import time
 
 import psutil
 
-print "Welcome,current system is", os.name, " 3 seconds late start to get data"
+print "Welcome,current system is", os.name, " 3 seconds late cn.bi.gitv.hip.parquetdemo.start to get data"
 print """"""
 time.sleep(3)
 

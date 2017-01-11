@@ -46,7 +46,7 @@ public class Start_Up {
                 printHelpAndExit(options);
                 break;
         }
-        //start listen
+        //cn.bi.gitv.hip.parquetdemo.start listen
         JedisPool jedisPool = new JedisPool(host, port);
         jedisPool.getResource().psubscribe(new MyJedisPubSub(jedisPool, compJedisPool, executorService), "__keyevent@0__:expired");
         //System.out.println("host:" + host + "\t" + "type:" + type + "\t" + "port:" + port);
