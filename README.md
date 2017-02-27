@@ -1,0 +1,12 @@
+```
+<pjs>
+    <pj>cluster-deploy</pj>--->集群搭建相关
+    <pj>docs-all</pj>--->项目文档汇集
+    <pj>external-parent</pj>--->额外依赖
+    <pj>hadoop-improve-parent</pj>--->hadoop提升开发
+    <pj>launcher-parent</pj>--->可运营桌面launcher
+    <pj>realtime-parent</pj>--->实时界面
+    <pj>userinfo-parent</pj>--->用户信息表
+    <pj>viscosity-parent</pj>--->播放粘度
+</pjs>
+```
