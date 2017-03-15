@@ -1,5 +1,7 @@
-Spark Driver首先作为一个ApplicationMaster在YARN集群中启动，客户端提交给ResourceManager的每一个job都会在集群的worker节点上分配一个唯一的ApplicationMaster，
-ApplicationMaster管理全生命周期的应用。因为Driver程序在YARN中运行，所以事先不用启动Spark Master/Client，应用的运行结果不能在客户端显示（可以在history server中查看），
+Spark Driver首先作为一个ApplicationMaster在YARN集群中启动，
+客户端提交给ResourceManager的每一个job都会在集群的worker节点上分配一个唯一的ApplicationMaster，
+ApplicationMaster管理全生命周期的应用。因为Driver程序在YARN中运行，所以事先不用启动Spark Master/Client，
+应用的运行结果不能在客户端显示（可以在history server中查看），
 所以最好将结果保存在HDFS而非stdout输出，客户端的终端显示的是作为YARN的job的简单运行状况。
 
 w1. 由client向ResourceManager提交请求，并上传jar到HDFS上

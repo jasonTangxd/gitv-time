@@ -1,2 +1,0 @@
-## Just show some PIC
-![]()

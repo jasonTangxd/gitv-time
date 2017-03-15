@@ -9,9 +9,10 @@
 ```
 步骤2:
 ```
-ResourceManager为该应用程序分配第一个Container，并与对应的Node-Manager通信，要求它在这个Container中启动应用程序的ApplicationMaster。
+ResourceManager为该应用程序分配第一个Container，并与对应的若干个Node-Manager通信，要求它在这个Container中启动应用程序的ApplicationMaster。
 ```
 步骤3:
+每台node都有一个唯一的ApplicationMaster
 ```
 ApplicationMaster首先向ResourceManager注册，这样用户可以直接通过ResourceManager查看应用程序的运行状态，然后它将为各个任务申请资源，并监控它的运行状态，直到运行结束，即重复步骤4~7
 ```

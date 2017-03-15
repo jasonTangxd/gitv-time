@@ -74,7 +74,7 @@ linux下，默认安装软件，在开发过程中会经常不知道到什么路
 
 * 获得PHP源码：php-5.4.1.tar.gz（最新版本为5.4.2），保存到/usr/local目录下
 
-下载地址：http://cn.php.net/get/php-5.4.2.tar.gz/from/a/mirror。
+下载地址：http://cn.php.net/get/php-5.4.2.tar.gz/from/a/mirror
 
 * 解压缩源码文件：
 ```
