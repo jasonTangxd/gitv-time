@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/realtime-parent.iml" filepath="$PROJECT_DIR$/realtime-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/realtime-ttl-trigger/realtime-ttl-trigger.iml" filepath="$PROJECT_DIR$/realtime-ttl-trigger/realtime-ttl-trigger.iml" />
+      <module fileurl="file://$PROJECT_DIR$/realtime-user-count-liv/realtime-user-count-liv.iml" filepath="$PROJECT_DIR$/realtime-user-count-liv/realtime-user-count-liv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/realtime-user-count-vod/realtime-user-count-vod.iml" filepath="$PROJECT_DIR$/realtime-user-count-vod/realtime-user-count-vod.iml" />
+    </modules>
+  </component>
+</project>

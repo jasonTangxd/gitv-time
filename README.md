@@ -1,20 +1,20 @@
 ```
 <pjs>
 --->集群搭建相关
-    <pj>cluster-deploy</pj>
+    <pj>cluster-搭建</pj>
 --->项目文档汇集
     <pj>docs-all</pj>
 --->额外依赖
-    <pj>external-parent</pj>
+    <pj>source-二次</pj>
 --->hadoop提升开发
-    <pj>hadoop-improve-parent</pj>
+    <pj>hadoop-提升</pj>
 --->可运营桌面launcher
-    <pj>launcher-parent</pj>
+    <pj>launcher-根</pj>
 --->实时界面
-    <pj>realtime-parent</pj>
+    <pj>realtime-根</pj>
 --->用户信息表
-    <pj>userinfo-parent</pj>
+    <pj>userinfo-根</pj>
 --->播放粘度
-    <pj>viscosity-parent</pj>
+    <pj>viscosity-根</pj>
 </pjs>
 ```
