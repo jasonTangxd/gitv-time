@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="kafka-hadoop-loader" />
+        <module name="launcher-bean-parse" />
+        <module name="launcher-bystorm-2hdfs" />
+        <module name="launcher-log-clean" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kafka-hadoop-loader" target="1.7" />
+      <module name="launcher-bean-parse" target="1.7" />
+      <module name="launcher-bystorm-2hdfs" target="1.7" />
+      <module name="launcher-log-clean" target="1.7" />
+      <module name="launcher-mail-client" target="1.7" />
+      <module name="launcher-parent" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

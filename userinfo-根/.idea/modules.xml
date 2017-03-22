@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/userinfo-app-version/userinfo-app-version.iml" filepath="$PROJECT_DIR$/userinfo-app-version/userinfo-app-version.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userinfo-consumer-mysql/userinfo-consumer-mysql.iml" filepath="$PROJECT_DIR$/userinfo-consumer-mysql/userinfo-consumer-mysql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userinfo-maintain/userinfo-maintain.iml" filepath="$PROJECT_DIR$/userinfo-maintain/userinfo-maintain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/userinfo-parent.iml" filepath="$PROJECT_DIR$/userinfo-parent.iml" />
+    </modules>
+  </component>
+</project>

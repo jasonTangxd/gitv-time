@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/launcher-bean-parse/launcher-bean-parse.iml" filepath="$PROJECT_DIR$/launcher-bean-parse/launcher-bean-parse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/launcher-bystorm-2hdfs/launcher-bystorm-2hdfs.iml" filepath="$PROJECT_DIR$/launcher-bystorm-2hdfs/launcher-bystorm-2hdfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/launcher-log-clean/launcher-log-clean.iml" filepath="$PROJECT_DIR$/launcher-log-clean/launcher-log-clean.iml" />
+      <module fileurl="file://$PROJECT_DIR$/launcher-parent.iml" filepath="$PROJECT_DIR$/launcher-parent.iml" />
+    </modules>
+  </component>
+</project>
